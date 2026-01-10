@@ -1,0 +1,1214 @@
+<!-- Trang cá nhân thành viên -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Member Profile Page</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "surface-dark": "#1b2733",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar hiding for horizontal scroll areas */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto border-x border-gray-800 shadow-2xl">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 sticky top-0 z-50 backdrop-blur-md bg-opacity-90 dark:bg-opacity-90">
+<div class="text-slate-900 dark:text-white flex size-12 shrink-0 items-center justify-start cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Hồ sơ thành viên</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-full size-10 hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 pb-24"> <!-- Padding bottom for navigation bar -->
+<!-- Profile Header -->
+<div class="flex flex-col items-center px-4 pt-4 pb-2">
+<div class="relative mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 border-4 border-surface-dark shadow-xl" data-alt="Portrait of a smiling asian man in his 50s wearing a casual shirt" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZTl14P6RI5Uo1nXukGZyRhQRD2MVWpHv6bzxJ7MBX2YBV2kkUkv1kj9PajGIfvqvhGXhjoMFpiotP4I3dTUf5jQ06LkcbDLuWPnDr1fyeT0PgkBSEW4K57Wbqj1p8VgAnkenYcCtWNfGFLkmUqPBGwnnRrMABA0fV9bheCFrpbzQInYqtvszQk2g2YvuC_Zq6heOcrK5T0oGEu-YXJPBm_lRCzPraWlOZ4G0PJAUTztwpOtIrfrsNsD-UeUtsxnjVpBHv4_hJo0s");'>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-white rounded-full p-1.5 border-4 border-background-dark flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center gap-1">
+<h1 class="text-2xl font-bold leading-tight tracking-[-0.015em] text-center">Nguyễn Văn An</h1>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="text-sm font-medium">Thế hệ thứ 3</span>
+<span class="size-1 rounded-full bg-slate-500"></span>
+<span class="text-sm font-medium">Cha</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-slate-500 dark:text-slate-400 bg-surface-dark px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">cake</span>
+<span class="text-xs font-medium">12/05/1975</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="px-4 py-4 w-full flex gap-3">
+<button class="flex-1 h-10 bg-primary hover:bg-blue-600 text-white text-sm font-bold rounded-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>Chỉnh sửa hồ sơ</span>
+</button>
+<button class="size-10 bg-surface-dark hover:bg-slate-800 text-white rounded-lg flex items-center justify-center border border-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+</button>
+</div>
+<!-- Bio -->
+<div class="px-4 pb-4">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-normal leading-relaxed text-center">
+                    Yêu thích câu cá và những buổi BBQ chủ nhật bên gia đình. Luôn trân trọng những giá trị truyền thống và lưu giữ kỷ niệm. 🎣 📸
+                </p>
+</div>
+<!-- Genealogy Chips -->
+<div class="w-full overflow-x-auto no-scrollbar pb-2">
+<div class="flex px-4 gap-3 min-w-max">
+<button class="flex h-9 items-center gap-2 px-4 rounded-full bg-primary/10 border border-primary/20 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+<span class="text-sm font-semibold">Xem cây gia phả</span>
+</button>
+<button class="flex h-9 items-center gap-2 px-4 rounded-full bg-surface-dark border border-gray-800 text-slate-300 hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px]">family_restroom</span>
+<span class="text-sm font-medium">Cha mẹ (2)</span>
+</button>
+<button class="flex h-9 items-center gap-2 px-4 rounded-full bg-surface-dark border border-gray-800 text-slate-300 hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+<span class="text-sm font-medium">Vợ chồng (1)</span>
+</button>
+<button class="flex h-9 items-center gap-2 px-4 rounded-full bg-surface-dark border border-gray-800 text-slate-300 hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px]">child_care</span>
+<span class="text-sm font-medium">Con cái (3)</span>
+</button>
+</div>
+</div>
+<!-- Stats -->
+<div class="flex gap-3 px-4 py-4 overflow-x-auto no-scrollbar">
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl bg-surface-dark p-3 items-center text-center border border-gray-800">
+<p class="text-white text-xl font-bold leading-tight">128</p>
+<p class="text-slate-400 text-xs font-medium">Ảnh đã đăng</p>
+</div>
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl bg-surface-dark p-3 items-center text-center border border-gray-800">
+<p class="text-white text-xl font-bold leading-tight">45</p>
+<p class="text-slate-400 text-xs font-medium">Người thân</p>
+</div>
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl bg-surface-dark p-3 items-center text-center border border-gray-800">
+<p class="text-white text-xl font-bold leading-tight">12</p>
+<p class="text-slate-400 text-xs font-medium">Sự kiện</p>
+</div>
+</div>
+<!-- Content Tabs -->
+<div class="sticky top-[68px] z-40 bg-background-dark pt-2 px-4 pb-2 border-b border-gray-800/50">
+<div class="flex p-1 bg-surface-dark rounded-lg">
+<button class="flex-1 py-1.5 rounded-md bg-gray-700 text-white shadow-sm text-sm font-semibold transition-all">
+                        Hình ảnh
+                    </button>
+<button class="flex-1 py-1.5 rounded-md text-slate-400 hover:text-white text-sm font-medium transition-all">
+                        Tiểu sử
+                    </button>
+<button class="flex-1 py-1.5 rounded-md text-slate-400 hover:text-white text-sm font-medium transition-all">
+                        Sự kiện
+                    </button>
+</div>
+</div>
+<!-- Media Grid -->
+<div class="grid grid-cols-3 gap-1 p-1">
+<!-- Image 1 -->
+<div class="aspect-square relative group overflow-hidden bg-gray-800 rounded-sm">
+<img alt="Group of students throwing graduation caps in the air" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Group of students throwing graduation caps in the air" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKE0YiRpKkfHiIsWG4txc66mTzBI7wdowyiRUoJ7H6jLwVlWjp6Y6MkiyL9poyo60dNWxYIiHTs_EKoJQ5nxUe713ulRFaSyCNIGk9gBNQx0vLk8QVGKe3k-we24On74VtQ5R9gLHruWoglFXnWtgCN6FZsU4t9n3dZ9gjCsYgK9odQ4mKG_RT1ShBdJXzctF8OdhZEOzlcVLFOWaWzifPwNt-PqObOqVFbWdIlCwMcQ3fuNcR2OzWuKYsfZwmU-3XzFypBjbXYg4"/>
+</div>
+<!-- Image 2 -->
+<div class="aspect-square relative group overflow-hidden bg-gray-800 rounded-sm">
+<img alt="A camera lens focusing on a blurred background" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="A camera lens focusing on a blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtcOa5k2MN6lAqwXLFvDW8ZT4WoRzB5oTdih1s6HWZSEZ8kL1G0Ige1u1zcCWfv26IDq9mHguGDOLx8AlyzTafATlC6BDzTuGD8wu7eQKILNJmSXcznEZVJaOXDLQnYS5DAM_Faq5jSy4ZVwK-jBQtLh4qlBeiY8q-O-0XQaMiW4CabnZNehfXWG6DFC-ra45nsGQr2DfsSD1wSugHG1E3BhshBF8QfGs623dV7ksOPPHj_bp3zBR990h7NSeROzeYKCU71WOSl8g"/>
+<div class="absolute top-1 right-1 bg-black/50 rounded-full p-0.5">
+<span class="material-symbols-outlined text-white text-[16px]">collections</span>
+</div>
+</div>
+<!-- Image 3 -->
+<div class="aspect-square relative group overflow-hidden bg-gray-800 rounded-sm">
+<img alt="Family members toasting with glasses at a dinner table" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Family members toasting with glasses at a dinner table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0PjMLIrVcQ11upG1Y03bruv65LpBoXo-wgt07w_MpvfAwHGVWDsn53VLany6y5aROuMPq9RyP5ctlVAU1218IIn4HtPUySKnKLkO95oN4LBsreN3AYErwXHbYKR94JyvD1vE0h3WK1z84NepSlpk7xKf1V3CFdZIoSfK3CKcTOOFaG1FkBc-9tsamlxcL8YLTTXG63nGRuLOQoDb0gKTzDTRyuZg-l-1-N_BLEZLnbnpJWjZ9Uf1-zYgQoaJVMhFpXfB3913TFN8"/>
+</div>
+<!-- Image 4 -->
+<div class="aspect-square relative group overflow-hidden bg-gray-800 rounded-sm">
+<img alt="Muscular man working out with ropes in a gym" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Muscular man working out with ropes in a gym" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7-tC4sN394QM_E9bsEq7Uz2uQ-Z4JYwRubp4599HTRxO3WbxR48-O5vtHxZo2Dro3CihOyBPhUAC9HZODlaRnv7_vMNM13i1qcSVjh5yNV4Z1We2zbeIjFxPQntzjLYJIv9FgacLl_Gmvcypa_j7p87kYCkh_qOYDtewODggvDeZYJB8gq5PMWVns500GQJ0rvPxRSFo-TcV-Ak7DPOZrhQMF4C30Xyc9J7M-rryVfoXSV6qAokIzpv5tn07QtKjJBjmoQyCq0oQ"/>
+</div>
+<!-- Image 5 -->
+<div class="aspect-square relative group overflow-hidden bg-gray-800 rounded-sm">
+<img alt="Group of friends laughing and sitting outdoors" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Group of friends laughing and sitting outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi6A6vfoBStW4ELybTcGlV0SEXuZncNA88eEAM5l8MMQbLa_-3N9la8dN3eSXlepfHWocD3uGlTpwWoRVQs0bAe_vqK8NJOtE6rwEQvem-guquOOhwtRg1nJ4wGz1iSYgIJ83-jHWqEePealNCmEWImrTVZXurHpya83rKs3adhnqJcBsjQUSQL0weLJyHSMbFGwSmB5OPUXSsQv8YTVGOTvcuC32H7f1di75uMxmmgwrwu8EPImygx5CNDo6cUnaFiaCe011vV2E"/>
+</div>
+<!-- Image 6 -->
+<div class="aspect-square relative group overflow-hidden bg-gray-800 rounded-sm">
+<img alt="Two friends looking at a map while traveling" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Two friends looking at a map while traveling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSB5U3ch-v0mIN-O_T6RgSwvI3lPPGwJVKVpIyn2920V9Sm4s3eHAQCmauDV8sCPZa_Qc9DLypDEr6wQTtCiuA0uCXvnC2zCnjnOGdWaVPDI_eedzTKXxGaNIbfP6F_eaxEE-2v9knXLT_Py_EVlQQZ7MqskirMuk8fA-w_u50WoD8V-gDyli6O0KDaT3ylME-vEWODpDs51CX0oG4nyNnR3535nm08u5_rOYhNvigpuDve6D-lf4ZcDje45B2AA8vFMevOTXHgJA"/>
+</div>
+<!-- Image 7 -->
+<div class="aspect-square relative group overflow-hidden bg-gray-800 rounded-sm">
+<img alt="Family gathered around a dining table with food" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Family gathered around a dining table with food" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuLwObrBDG0OyhxHNXorRSElV88Pvvc9z00InT4iNc7RLHi-Y1-krdhgFR8h9uPIc_CexV1qTQMwkrgLV3MwOGiPVt3pr1op7Et9Zr6LeUbm7NRycoGDp64ye7npk_1taa7vJxz27a-OfwKooQl2lGRKKV4JiFEIOPBOOuztueYesYKAvEQK0loIlLvgOz2bPkSZukIvzMZnYn3s0Xr58hG8xST4hXyym46npj92gDcN7Y2vzJWgmN9TT8WZREccf-6CnZ1Z-_pxw"/>
+</div>
+<!-- Image 8 -->
+<div class="aspect-square relative group overflow-hidden bg-gray-800 rounded-sm">
+<img alt="Peaceful landscape of a lake with mountains in background" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Peaceful landscape of a lake with mountains in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw6iS8Gyb-Veezq80Oe8zUpUw0TIi7o0XIafnHT2eMN2lYdd2uCotSPlQf5IT3uk9kUihs__2tN_My8XGlL81JQJmQu8fStBn4qbEvM5Qu0AL6qRyTixg8YtLh7YxQJgtS--BblAczch3JSvQL_eTpd9t68QC24F4T8Y8uBPnJWNQVx9Ole84Ef69rgRF14-RplcQyQ5JzpEjSuTr5yolgsuM5pzpnV2iqTgdgD265oELuQGTPDxrUrDhwO9eea_XNdpzbiGjc2dk"/>
+</div>
+<!-- Image 9 -->
+<div class="aspect-square relative group overflow-hidden bg-gray-800 rounded-sm bg-gray-700 flex flex-col items-center justify-center text-slate-400 cursor-pointer hover:bg-gray-600 transition-colors">
+<span class="material-symbols-outlined text-[32px] mb-1">add_a_photo</span>
+<span class="text-xs font-medium">Thêm ảnh</span>
+</div>
+</div>
+<!-- Empty State / Prompt (Example) -->
+<div class="mx-4 mt-6 p-6 rounded-xl border border-dashed border-gray-700 bg-surface-dark/30 flex flex-col items-center justify-center text-center">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-primary text-2xl">history_edu</span>
+</div>
+<p class="text-white font-semibold mb-1">Chưa có sự kiện nào</p>
+<p class="text-slate-400 text-sm mb-4">Hãy thêm các cột mốc đáng nhớ vào dòng thời gian của An.</p>
+<button class="text-primary text-sm font-bold hover:underline">Thêm sự kiện ngay</button>
+</div>
+<div class="h-6 w-full"></div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto z-50 bg-background-dark/95 backdrop-blur-lg border-t border-gray-800 pb-safe">
+<div class="flex items-center justify-around h-[60px] px-2">
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-slate-400 hover:text-white group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">home</span>
+<span class="text-[10px] font-medium">Trang chủ</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-slate-400 hover:text-white group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">account_tree</span>
+<span class="text-[10px] font-medium">Gia phả</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full -mt-5">
+<div class="size-14 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/30 text-white hover:bg-blue-600 transition-colors">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-slate-400 hover:text-white group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">chat_bubble</span>
+<span class="text-[10px] font-medium">Tin nhắn</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-primary group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform filled">person</span>
+<span class="text-[10px] font-medium">Cá nhân</span>
+</button>
+</div>
+<!-- Safe area spacing for iOS home indicator -->
+<div class="h-5 w-full"></div>
+</div>
+</div>
+</body></html>
+
+<!-- Cây gia phả tương tác -->
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cây gia phả tương tác</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hide for cleaner UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-hidden relative h-screen w-full flex flex-col">
+<!-- Top App Bar (Fixed) -->
+<header class="z-50 absolute top-0 left-0 w-full bg-background-dark/80 backdrop-blur-md border-b border-white/5">
+<div class="flex items-center p-4 justify-between">
+<button class="text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Đại Gia Đình Nguyễn</h2>
+<div class="flex items-center justify-end gap-2">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full hover:bg-white/10 text-white transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
+<div class="size-6 rounded-full bg-cover bg-center" data-alt="Current user avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbDnnGda4kltoPbwNJuXnGfoAoRl_tyzmHVbaAw0FF1Vy3slJ2KqU7oeQhL030urGm8QObA7emZGW-oEZlrQ78hOEuEhM1_8uqukL3cyXcyBaqIgKJf0uaSzQQSuiyqpTeAnobUtU4muSSGXLvSvWUBedX1wL4zvMOj8ear1l00lb0HBB8FKKtfdm4iciNJUUrzBYztc4XnG_sP9TMyKE6lw2FE55Uv3uFCLAllc_P9FALNYxJ0eOeYbQVdkGpk-2uAkFZyRmFEWA');"></div>
+</button>
+</div>
+</div>
+</header>
+<!-- Interactive Canvas Area -->
+<main class="flex-1 relative overflow-hidden bg-[#101922] w-full h-full cursor-grab active:cursor-grabbing">
+<!-- Grid Background Pattern -->
+<div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;">
+</div>
+<!-- Floating Search Bar -->
+<div class="absolute top-20 left-4 right-4 z-40 max-w-md mx-auto">
+<div class="flex w-full items-stretch rounded-full h-12 shadow-lg shadow-black/20">
+<div class="text-[#9dabb9] flex border-none bg-[#283039] items-center justify-center pl-4 rounded-l-full border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-full text-white focus:outline-0 focus:ring-0 border-none bg-[#283039] placeholder:text-[#9dabb9] px-4 pl-2 text-base font-normal leading-normal" placeholder="Tìm thành viên..." value=""/>
+</div>
+</div>
+<!-- Tree Container (Simulating a zoomed-in view) -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[40%] scale-100 origin-center w-[1000px] h-[800px]">
+<!-- Connecting Lines (SVG) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none stroke-white/20" style="z-index: 0;">
+<!-- Root to Gen 2 -->
+<path d="M500,120 C500,180 250,150 250,250" fill="none" stroke-width="2"></path>
+<path d="M500,120 C500,180 750,150 750,250" fill="none" stroke-width="2"></path>
+<!-- Gen 2 Left to Gen 3 -->
+<path d="M250,330 C250,380 150,360 150,450" fill="none" stroke-width="2"></path>
+<path d="M250,330 C250,380 350,360 350,450" fill="none" stroke-width="2"></path>
+<!-- Gen 2 Right to Gen 3 -->
+<path d="M750,330 C750,380 650,360 650,450" fill="none" stroke-width="2"></path>
+<path d="M750,330 C750,380 850,360 850,450" fill="none" stroke-width="2"></path>
+</svg>
+<!-- Generation 1 (Root) -->
+<div class="absolute top-[40px] left-[500px] -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer z-10">
+<div class="relative">
+<div class="size-20 rounded-full border-4 border-white/10 bg-gray-700 overflow-hidden shadow-xl group-hover:scale-110 group-hover:border-primary transition-all duration-300">
+<img class="w-full h-full object-cover" data-alt="Portrait of elderly woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCccScxpWig4InuGfoAdb580OJhp-IRi9Ad-03S5DqLq5YVktpSTmBwoOBfu1jih8spPLy4Sk_H8tNSUrsawTdacrFN9rjzO5lE5SK4ne4RAo7ah0GkOvyd2cY25dhd33svQYk6pU7yvpWfHUbOSM4LWB7i8EmpP5_3WnlQ24KBZELu9WZ--L_fA_1o09yPHq6z5uF0i7yiu8sf5MQKSUOUGtJHschYz6fIxY5Ai3P_5hlA4oyLz_Le535Pb9SV9PnuVRyTgAkC4GM"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary text-white text-[10px] px-2 py-0.5 rounded-full font-bold shadow-sm border border-[#101922]">1945</div>
+</div>
+<div class="text-center">
+<p class="text-white text-sm font-bold bg-[#101922]/80 px-2 rounded-md">Nguyễn Thị Cúc</p>
+<p class="text-white/60 text-xs">Bà Nội</p>
+</div>
+</div>
+<!-- Generation 2 - Left -->
+<div class="absolute top-[250px] left-[250px] -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer z-10">
+<div class="relative">
+<div class="size-20 rounded-full border-4 border-white/10 bg-gray-700 overflow-hidden shadow-xl group-hover:scale-110 group-hover:border-primary transition-all duration-300">
+<img class="w-full h-full object-cover" data-alt="Portrait of middle aged man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdgeN-jrJYs3lUKAK-QmtUYg4HgbUIs2533hVdI6Gg0OwYoHMHrKKMJpZrWFFKbCWRalkVQxlQqJht07-I31nPEz6hX7Jj9bD5Cx_6k_jVXIsDz7iGYW9OD-iyOJUVASD9BS53aH4RmNyf6cm-UHESFKxsrhIeXfKV1dgesvJzVwbbvctnw4khNPaLli_yTMONqyfxWlr2WbcdMBxmQoiXr09fUiFUOYWV4d9KbPsgbpYF_sYBnDKwZY_HAwgRcXn0LRRl5a-iUA4"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-gray-600 text-white text-[10px] px-2 py-0.5 rounded-full font-bold shadow-sm border border-[#101922]">1970</div>
+</div>
+<div class="text-center">
+<p class="text-white text-sm font-bold bg-[#101922]/80 px-2 rounded-md">Nguyễn Văn Ba</p>
+<p class="text-white/60 text-xs">Bác Cả</p>
+</div>
+</div>
+<!-- Generation 2 - Right (Selected) -->
+<div class="absolute top-[250px] left-[750px] -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer z-10">
+<!-- Highlight Circle for Selection -->
+<div class="absolute inset-0 -m-4 border border-dashed border-primary/50 rounded-full animate-spin-slow pointer-events-none"></div>
+<div class="relative">
+<div class="size-24 rounded-full border-4 border-primary bg-gray-700 overflow-hidden shadow-2xl shadow-primary/20 scale-110 transition-all duration-300">
+<img class="w-full h-full object-cover" data-alt="Portrait of smiling man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyJxdJVWtrQ1dqf-bzzGuwuvNGxq4DgWntLjjooCCbStZu0Y6wjIwsY8vBdId0prhP0eex0lIG1N4nbe59U3ZMTwoDgKb9Mt4gjygCJMc-ebmJF8FVb2Qt1VtS6pHrIkXeggqIKZcLNHmwHQmb25U61xm00en5UrVySHDNF3qykrIs14qUsiPxA0r5aJCJMUo_NUan6jQRxWAsMc-lhPM4oxUtrCjhaiawpuWSmYf3qV5yuc1L2-iaU3uLcw_WTpzqTeGmOQsi1Oo"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary text-white text-xs px-2 py-0.5 rounded-full font-bold shadow-sm border border-[#101922]">1975</div>
+</div>
+<div class="text-center mt-1">
+<p class="text-primary text-base font-bold bg-[#101922]/90 px-3 py-0.5 rounded-full shadow-lg">Nguyễn Văn Bốn</p>
+<p class="text-white/80 text-xs">Bố</p>
+</div>
+</div>
+<!-- Generation 3 -->
+<div class="absolute top-[450px] left-[150px] -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer opacity-60 hover:opacity-100 transition-opacity z-10">
+<div class="size-14 rounded-full border-2 border-white/10 bg-gray-700 overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Portrait of young man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD00i2r3W0ku-eAUa7ywzyvMlzPydHihn7zUb564ClgRQr3U2RTMccYy3aKocCcJvfU2bnAdSjlX9ECpUwuqHCZQwqfZvfwT5bT40uAn7FmmimA2G6oVhfdlNjOTtSiqDvdmLy579jZd4vaUyhTp9QWPk-L_7LkR7-pZQDIVoPrNrxV3K61TefEPm74ZCO8Cp-c-VcaxLx-4jbtvJWpYuZkXSVXAOAW0wg8veRUseCEvQBhanf5_Nn0X2BiD2Xwl1h8-YhfuLTGiuA"/>
+</div>
+<p class="text-white text-xs font-medium bg-[#101922]/80 px-1 rounded">Minh</p>
+</div>
+<div class="absolute top-[450px] left-[350px] -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer opacity-60 hover:opacity-100 transition-opacity z-10">
+<div class="size-14 rounded-full border-2 border-white/10 bg-gray-700 overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Portrait of young woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF6-WF-eEG6Ro2B4ULlLFA1e5zXuOiLTA0edRIRfen5kB9RmRpNYLTQ4MnnZumknxssLqQYPohMIT_QTfxFMgFfAIbmsRx5NE1n2grTtVfQNvb0hADqL7ZV58Zo1LNjFDlWtfR08UkgDaCThzHkV006ut4VNv-EprWE1Vfyr3CZY_JZoABj63-IPJnqd7Wtzvo3VjVr9EH-SPJg9XjStPGzY4F9ZKWYCniR-pPRW8o6phFc6ExO_GQmbAA9LZFRLxOw-E6pP7rcwo"/>
+</div>
+<p class="text-white text-xs font-medium bg-[#101922]/80 px-1 rounded">Lan</p>
+</div>
+<div class="absolute top-[450px] left-[650px] -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer opacity-60 hover:opacity-100 transition-opacity z-10">
+<div class="size-14 rounded-full border-2 border-white/10 bg-gray-700 overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Portrait of young woman with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTF9beNS196FCma8l4oVFjiaWT-_Ui3DdQ-rx_72oNekEaHJXLasEnJp3BxT9wo43MwtCDUjlyBeAJ0QS7xTYPzZFR2KIzSAtnPxHmoROWQ9TTmcs7OhRD38t1ro3__rkm-BTS7SqMD7Auulb3YWzQem3003JRIvogR7tojGiIruhmsPmaIfKcCNC_lK5eG6KxbjYosVY9FJLwkyEpXgz_WLgfE-uNFtKCHxlj_x2LXVyBNgg1Po4a5lPjCPIT4UMb7WE1bLmA8vg"/>
+</div>
+<p class="text-white text-xs font-medium bg-[#101922]/80 px-1 rounded">Mai</p>
+</div>
+<div class="absolute top-[450px] left-[850px] -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer opacity-60 hover:opacity-100 transition-opacity z-10">
+<div class="size-14 rounded-full border-2 border-white/10 bg-gray-700 overflow-hidden shadow-lg">
+<div class="w-full h-full flex items-center justify-center bg-gray-800 text-white/40">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+</div>
+<p class="text-white text-xs font-medium bg-[#101922]/80 px-1 rounded">?</p>
+</div>
+</div>
+<!-- Floating Controls -->
+<div class="absolute bottom-36 right-4 flex flex-col gap-2 z-40">
+<div class="flex flex-col rounded-lg bg-[#1c2127]/90 backdrop-blur border border-white/10 overflow-hidden shadow-lg">
+<button class="p-3 text-white hover:bg-white/10 active:bg-white/20 transition-colors border-b border-white/5">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="p-3 text-white hover:bg-white/10 active:bg-white/20 transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+<button class="p-3 text-white bg-[#1c2127]/90 backdrop-blur border border-white/10 rounded-lg shadow-lg hover:bg-white/10 active:bg-white/20 transition-colors">
+<span class="material-symbols-outlined">center_focus_strong</span>
+</button>
+</div>
+</main>
+<!-- Bottom Detail Sheet (Partially visible/Selected State) -->
+<div class="absolute bottom-0 left-0 w-full z-50">
+<!-- Floating Action Button for Add - Pushed up by the sheet -->
+<div class="absolute -top-20 right-4 pointer-events-auto">
+<button class="flex size-14 cursor-pointer items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40 hover:bg-primary/90 transition-all active:scale-95">
+<span class="material-symbols-outlined !text-[32px]">add</span>
+</button>
+</div>
+<!-- Sheet Card -->
+<div class="w-full bg-[#1c2127] rounded-t-3xl shadow-[0_-8px_30px_rgba(0,0,0,0.5)] border-t border-white/10 p-5 pb-8 animate-slide-up">
+<!-- Drag Handle -->
+<div class="w-12 h-1.5 bg-white/20 rounded-full mx-auto mb-6"></div>
+<div class="flex items-start justify-between gap-4">
+<div class="flex gap-4">
+<!-- Large Avatar -->
+<div class="size-20 shrink-0 rounded-2xl bg-center bg-no-repeat bg-cover border-2 border-white/10 shadow-inner" data-alt="Close up portrait of Nguyen Van Bon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0yB23NHICaZnq0ZFdw5xEX37LrL0Q0Sdu82388xFzj8KE2hY4HgrrTeQfJ04AFQT4kcxxRY2A9Nn2Jdq2e2Rw1D45XpVO0_q26wrO3F2Ahn6rxMtzvFNin0jC2CJG8HGsQIGLCEukdQHcxPMbAIpqU-Hvj_qWuTp3ARg7e8vkzom1rInhV72T6P6Sj4ZqxKCTknWKZUMsRLC1gBs20uM5vd9VszSf6j2KPRabhaYXKfp8qMYZ8mG-z74UPerWw1oejlMUFmwlwmk");'>
+</div>
+<div class="flex flex-col pt-1">
+<div class="flex items-center gap-2">
+<h3 class="text-white text-xl font-bold leading-tight">Nguyễn Văn Bốn</h3>
+<span class="material-symbols-outlined text-primary text-lg" title="Verified">verified</span>
+</div>
+<p class="text-[#9dabb9] text-sm font-medium mt-1">Bố (1975 - Nay)</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 text-xs font-medium border border-blue-500/30">Trưởng Nam</span>
+<span class="px-2 py-0.5 rounded bg-green-500/20 text-green-400 text-xs font-medium border border-green-500/30">Đang sống</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 p-2 text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Quick Actions -->
+<div class="grid grid-cols-4 gap-4 mt-6 border-t border-white/5 pt-4">
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-12 rounded-full bg-[#283039] flex items-center justify-center group-hover:bg-primary/20 group-hover:text-primary text-white transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+<span class="text-xs text-[#9dabb9] group-hover:text-white">Hồ sơ</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-12 rounded-full bg-[#283039] flex items-center justify-center group-hover:bg-primary/20 group-hover:text-primary text-white transition-colors">
+<span class="material-symbols-outlined">photo_library</span>
+</div>
+<span class="text-xs text-[#9dabb9] group-hover:text-white">Ảnh (24)</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-12 rounded-full bg-[#283039] flex items-center justify-center group-hover:bg-primary/20 group-hover:text-primary text-white transition-colors">
+<span class="material-symbols-outlined">family_history</span>
+</div>
+<span class="text-xs text-[#9dabb9] group-hover:text-white">Quan hệ</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-12 rounded-full bg-[#283039] flex items-center justify-center group-hover:bg-primary/20 group-hover:text-primary text-white transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</div>
+<span class="text-xs text-[#9dabb9] group-hover:text-white">Sửa</span>
+</button>
+</div>
+<button class="w-full mt-6 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition-colors flex items-center justify-center gap-2">
+                Xem chi tiết
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>
+
+<!-- Trang quản lý sự kiện -->
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Event Management</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-dark": "#1c242f",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen font-display antialiased selection:bg-primary/30">
+<div class="relative flex h-full w-full flex-col overflow-x-hidden pb-24">
+<!-- Header -->
+<header class="sticky top-0 z-20 flex items-center justify-between bg-background-light/95 dark:bg-background-dark/95 px-4 py-3 backdrop-blur-md">
+<h2 class="text-[#111418] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Lịch Gia Đình</h2>
+<div class="flex items-center gap-3">
+<button class="relative flex h-10 w-10 items-center justify-center rounded-full text-[#111418] dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="absolute top-2 right-2 h-2.5 w-2.5 rounded-full bg-red-500 border-2 border-background-light dark:border-background-dark"></span>
+</button>
+<div class="h-8 w-8 rounded-full bg-gradient-to-br from-primary to-blue-400 p-0.5">
+<img alt="User avatar" class="h-full w-full rounded-full object-cover" data-alt="Small circular avatar of an elderly man smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBolK-ipWETUzsg2hHkdMwd0ikUT4aeO9nxpxJP6nJO8WSnb1w7MmGTGQJXY3DjUj6kUKGz6eAZe30b9kBfS_c8PD_mlg07oerwigirnoAQ-IJIuW0TbchvBrFLMeXmrb3-RsRBfcg2z-Bb9Zy7TbvywCO_TqhRVeLhpL_tfiG_1IJ_xFcuzF8RmW-Ykfwnnxr2jz5MYETnfVWABHsqq4oP96O9sqXetAaqaAO_Twf3YfvIsGunpFFtzl9wEH-FvdvfNwmptRt6VN0"/>
+</div>
+</div>
+</header>
+<!-- Calendar Widget -->
+<section class="flex flex-col items-center justify-center px-4 py-2">
+<div class="w-full max-w-md rounded-2xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm">
+<!-- Month Navigator -->
+<div class="flex items-center justify-between mb-4 px-2">
+<button class="flex h-8 w-8 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-[#111418] dark:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<p class="text-[#111418] dark:text-white text-base font-bold">Tháng 11, 2023</p>
+<button class="flex h-8 w-8 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-[#111418] dark:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- Days of Week -->
+<div class="grid grid-cols-7 mb-2">
+<div class="text-[#637588] dark:text-[#94a3b8] text-xs font-bold text-center py-1">CN</div>
+<div class="text-[#637588] dark:text-[#94a3b8] text-xs font-bold text-center py-1">T2</div>
+<div class="text-[#637588] dark:text-[#94a3b8] text-xs font-bold text-center py-1">T3</div>
+<div class="text-[#637588] dark:text-[#94a3b8] text-xs font-bold text-center py-1">T4</div>
+<div class="text-[#637588] dark:text-[#94a3b8] text-xs font-bold text-center py-1">T5</div>
+<div class="text-[#637588] dark:text-[#94a3b8] text-xs font-bold text-center py-1">T6</div>
+<div class="text-[#637588] dark:text-[#94a3b8] text-xs font-bold text-center py-1">T7</div>
+</div>
+<!-- Calendar Grid -->
+<div class="grid grid-cols-7 gap-y-2">
+<!-- Empty slots for prev month -->
+<div class="h-9 w-full"></div>
+<div class="h-9 w-full"></div>
+<div class="h-9 w-full"></div>
+<!-- Days -->
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">1</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">2</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">3</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 relative">
+                        4
+                        <span class="absolute bottom-1.5 h-1 w-1 rounded-full bg-red-500"></span>
+</button>
+<!-- Selected Day -->
+<button class="h-9 w-full flex flex-col items-center justify-center rounded-full bg-primary text-white text-sm font-bold shadow-md shadow-primary/30">
+                        5
+                    </button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">6</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">7</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">8</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">9</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 relative">
+                        10
+                         <span class="absolute bottom-1.5 h-1 w-1 rounded-full bg-green-500"></span>
+</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">11</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">12</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">13</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">14</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 relative">
+                        15
+                        <span class="absolute bottom-1.5 h-1 w-1 rounded-full bg-orange-500"></span>
+</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">16</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">17</button>
+<button class="h-9 w-full flex items-center justify-center rounded-full text-[#111418] dark:text-white text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">18</button>
+</div>
+<!-- Expand handle -->
+<div class="flex justify-center mt-2">
+<div class="h-1 w-12 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+</div>
+</div>
+</section>
+<!-- Filter Chips -->
+<section class="flex gap-3 px-4 py-3 overflow-x-auto scrollbar-hide">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary pl-4 pr-4 transition-transform active:scale-95 shadow-lg shadow-primary/20">
+<span class="text-white text-sm font-bold">Tất cả</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 pl-4 pr-4 transition-transform active:scale-95">
+<span class="text-[#111418] dark:text-gray-300 text-sm font-medium">Sinh nhật</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 pl-4 pr-4 transition-transform active:scale-95">
+<span class="text-[#111418] dark:text-gray-300 text-sm font-medium">Kỷ niệm</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 pl-4 pr-4 transition-transform active:scale-95">
+<span class="text-[#111418] dark:text-gray-300 text-sm font-medium">Họp mặt</span>
+</button>
+</section>
+<!-- Events List -->
+<div class="flex flex-col gap-2">
+<!-- Section: Today -->
+<div>
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight px-5 py-3 flex items-center gap-2">
+                    Hôm nay
+                    <span class="text-xs font-normal text-primary bg-primary/10 px-2 py-0.5 rounded-full">5 tháng 11</span>
+</h3>
+<div class="px-4">
+<!-- Event Card 1: Birthday -->
+<div class="group relative flex overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark shadow-sm transition-all hover:shadow-md border border-transparent dark:border-white/5">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-red-500"></div> <!-- Color strip for type -->
+<div class="flex flex-1 flex-col p-4 pl-5">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-red-500 text-[20px]">cake</span>
+<span class="text-xs font-bold uppercase tracking-wider text-red-500">Sinh nhật</span>
+</div>
+<h4 class="text-[#111418] dark:text-white text-lg font-bold leading-tight mb-1">Bà Nội tròn 80 tuổi</h4>
+<div class="flex flex-col gap-1 mt-1">
+<div class="flex items-center gap-2 text-[#637588] dark:text-[#94a3b8] text-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>18:00 - 21:00</span>
+</div>
+<div class="flex items-center gap-2 text-[#637588] dark:text-[#94a3b8] text-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="line-clamp-1">Nhà hàng Sen Tây Hồ, Hà Nội</span>
+</div>
+</div>
+<!-- Avatars overlapping -->
+<div class="flex items-center -space-x-2 mt-4">
+<img alt="Elderly woman smiling" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-[#1c242f] object-cover" data-alt="Portrait of grandmother smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBupAZAvypXn0bpycSbEKlhdWfRReImSuPD1UaT9BsJUgQU0OWERYIwf5DNizAYrzpF7bcNhfRxDoQue1bOv4eTU5ByspzBboKTpW_0bnCX498pm_I_gOiMUKVMx34286XtXg3T7XhlwHnk93k6dzMoUZXuTMDGB4xGRVqnigF4mtjdw3PFN45PuiYgZ4foBQqRmFOGHSNx86uqrce7Ie3A_Xzw4D5EKkzdEL4ohSlN-A6fPhivy8mE827nfUUOZYGL-p-6mSWIQvs"/>
+<img alt="Man avatar" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-[#1c242f] object-cover" data-alt="Portrait of a family member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSpCF_9bLRqCkjrrhQhGlutvaoc-ZV460DTabdgeVjBlCGCCFFeBci-HSZ78rZNa1pl9wE09xAWJ6eaHP3qK2YPcKdPNdOjcyKCT4fzHOKczOxCFq5jumMhqNaIkQAIw9kijnuFyl-yGAKDd6reGCehzcEki0K27IIawDkSVe1kHZtNg5TZ-gSJuOQiKJN1Dz9n4YWfxvuW8nJoPbLbOH3fP2QGNOOiGe4VMPmSK1wqYyg1luXKMZNUpCDG0w8wkhNlamVwVWko_8"/>
+<img alt="Woman avatar" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-[#1c242f] object-cover" data-alt="Portrait of a family member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVqCTY6xdNQP-XZySW0tjNJF3muWJLv7mp3Fdsbj_FWU712rqRTn2t_eSG_0khWLhBFIQrDItIinHGmpSz5qmyle8cwje1I-Niin8vIxWlTTE-yY6-5NCQf90LiOtgk8-HVtr1KjbTB7toyU7owR08o2sLMHb1eR7iHnSTLRgqZzhJ6CjAYvpfrc0BF0sV1ZS6zF_eXJMhDA8DW7rjcjqELL72edjGkGcu_l_EkoSKfKKsOrUfeF6L0slLFxIi4ttV4hOCuiC_q6E"/>
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 ring-2 ring-white dark:ring-[#1c242f]">
+<span class="text-xs font-medium text-gray-600 dark:text-gray-300">+12</span>
+</div>
+</div>
+</div>
+<!-- Image side -->
+<div class="w-28 bg-cover bg-center" data-alt="Birthday cake with candles in a cozy room" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBle5kWcKhWR_K-EKO9SoYValMzfJGK0321sLKWV3BuzYQsIINkUDL6qTwabgCQJvbxx9hC-A5MuXaFs1gme5TgiIa_6JuAh0UsJJzV-zmYIkfGwfhQvdEIvCUznbl2-LLmEk68vdtQlJke9yPx9hi9HD_uNTpBZvj6aj9LMnL9hdKvpHenbHcJZTe9yErSGU7vwA5hj9GKVVmxXUZLCuTJCuQwVdP6YRMaAdm69WUEbTNqjyQkNJk3-DlpgxM_H-k-26i6mxddC10');"></div>
+</div>
+</div>
+</div>
+<!-- Section: Upcoming -->
+<div>
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight px-5 py-3 mt-2">Sắp tới</h3>
+<div class="px-4 flex flex-col gap-4">
+<!-- Event Card 2: Anniversary -->
+<div class="group relative flex overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark shadow-sm transition-all hover:shadow-md border border-transparent dark:border-white/5">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-orange-500"></div>
+<div class="flex flex-1 flex-col p-4 pl-5">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-orange-500 text-[20px]">celebration</span>
+<span class="text-xs font-bold uppercase tracking-wider text-orange-500">Kỷ niệm</span>
+</div>
+<h4 class="text-[#111418] dark:text-white text-lg font-bold leading-tight mb-1">30 năm ngày cưới Bác Cả</h4>
+<p class="text-primary text-sm font-medium mb-1">Ngày 15 tháng 11</p>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-[#637588] dark:text-[#94a3b8] text-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Tại gia (Nhà thờ họ)</span>
+</div>
+</div>
+</div>
+<div class="w-24 bg-cover bg-center" data-alt="Happy couple clinking champagne glasses" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_nfd7ITmgueGlqgXNI7cLrDQUnuKyaNI3z8Cdxop62XtDUlEO7R2bDxUeMGOP0-QBeDbxu1S0SpB3b0Faxbk1vL92bNIF2pQnc9F0N6qGKOzcgCjETpOYKAuSURFEpI_5bME7pVNiSmcFHh0rpsRgiW5c_oCFgBEBHkE2ymnWOaRyypy_2oOEodA2pVttSZFJO-3BJpQIc7biIvxE1oWhYPa_BrNU-UlsOSU7fersJtv71bRHyJTLShPYIatu4Tth_2HAiDbJfbo');"></div>
+</div>
+<!-- Event Card 3: Gathering -->
+<div class="group relative flex overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark shadow-sm transition-all hover:shadow-md border border-transparent dark:border-white/5">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-green-500"></div>
+<div class="flex flex-1 flex-col p-4 pl-5">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-green-500 text-[20px]">diversity_3</span>
+<span class="text-xs font-bold uppercase tracking-wider text-green-500">Họp mặt</span>
+</div>
+<h4 class="text-[#111418] dark:text-white text-lg font-bold leading-tight mb-1">Họp mặt Chi 2</h4>
+<p class="text-primary text-sm font-medium mb-1">Ngày 20 tháng 11</p>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-[#637588] dark:text-[#94a3b8] text-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Công viên Yên Sở</span>
+</div>
+</div>
+</div>
+<div class="w-24 bg-cover bg-center" data-alt="Group of people having a picnic outdoors in a park" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTzAcm4_UPIrrOhCJYiQS7tEaNWGmiClIATJJ1MQ2fyP18qZH-jq9yW2U3kO-cIUXz67r_u34XSAd5ecSnkiOqHZ9sPRWcS2T956HPontnjMCKBeC1fnL-NSk5e220rQqqoLgFJpJpb1a4xCS32OSrO1j3BVVYuCY7iuPtiP1fDpeeH0BX2Kv-XwKNt_4DnHBSua_f62rMj4QldIGU5YI4GpRw2uLQfKxclTqX8cI0r46jCkuJ0hnsCFTYFQcm85ebicyKrSzl-HM');"></div>
+</div>
+</div>
+</div>
+<!-- Empty State hint for next week -->
+<div class="mt-6 px-8 py-8 flex flex-col items-center justify-center opacity-60">
+<div class="rounded-full bg-surface-light dark:bg-surface-dark p-4 mb-3">
+<span class="material-symbols-outlined text-4xl text-gray-400">event_note</span>
+</div>
+<p class="text-center text-sm text-gray-500 dark:text-gray-400 font-medium">Không có sự kiện nào khác trong tháng này</p>
+<button class="mt-2 text-primary text-sm font-bold">Xem tháng sau</button>
+</div>
+</div>
+<!-- FAB: Add Event -->
+<button class="fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-[0_8px_16px_rgba(19,127,236,0.3)] transition-transform hover:scale-105 active:scale-95 group">
+<span class="material-symbols-outlined text-[28px] transition-transform group-hover:rotate-90">add</span>
+</button>
+</div>
+</body></html>
+
+<!-- Thư viện ảnh & video -->
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thư viện ảnh &amp; video</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-dark": "#1C252E",
+                        "surface-light": "#FFFFFF",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-hidden h-screen flex flex-col">
+<!-- Top Navigation & Controls Container -->
+<div class="flex-none bg-background-light dark:bg-background-dark z-20 shadow-sm dark:shadow-none pb-2">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between">
+<button class="text-[#111418] dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Thư viện gia đình</h2>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-2">
+<label class="flex flex-col w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-10 bg-surface-light dark:bg-surface-dark shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 focus-within:ring-2 focus-within:ring-primary">
+<div class="text-[#9dabb9] flex items-center justify-center pl-3 pr-2">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden bg-transparent text-[#111418] dark:text-white focus:outline-0 placeholder:text-[#9dabb9] text-sm font-normal leading-normal border-none" placeholder="Tìm kiếm khoảnh khắc, người thân..." value=""/>
+<div class="text-[#9dabb9] flex items-center justify-center pr-3 pl-2 cursor-pointer hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Segmented Control -->
+<div class="flex px-4 py-2">
+<div class="flex h-10 flex-1 items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark p-1 ring-1 ring-gray-200 dark:ring-gray-800">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-[6px] transition-all has-[:checked]:bg-primary has-[:checked]:shadow-sm has-[:checked]:text-white text-[#637588] dark:text-[#9dabb9] text-sm font-semibold leading-normal">
+<span class="truncate">Dòng thời gian</span>
+<input checked="" class="invisible w-0 absolute" name="view-mode" type="radio" value="timeline"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-[6px] transition-all has-[:checked]:bg-primary has-[:checked]:shadow-sm has-[:checked]:text-white text-[#637588] dark:text-[#9dabb9] text-sm font-semibold leading-normal">
+<span class="truncate">Album</span>
+<input class="invisible w-0 absolute" name="view-mode" type="radio" value="album"/>
+</label>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 px-4 py-1 overflow-x-auto no-scrollbar">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white pl-4 pr-4 border border-transparent">
+<span class="text-sm font-medium leading-normal">Tất cả</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark text-[#111418] dark:text-white pl-4 pr-4 border border-gray-200 dark:border-gray-700">
+<span class="text-sm font-medium leading-normal">Ảnh</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark text-[#111418] dark:text-white pl-4 pr-4 border border-gray-200 dark:border-gray-700">
+<span class="text-sm font-medium leading-normal">Video</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark text-[#111418] dark:text-white pl-4 pr-4 border border-gray-200 dark:border-gray-700">
+<span class="text-sm font-medium leading-normal">Yêu thích</span>
+</button>
+</div>
+</div>
+<!-- Main Content Area (Scrollable) -->
+<div class="flex-1 overflow-y-auto no-scrollbar pb-24 relative bg-background-light dark:bg-background-dark">
+<!-- Timeline Section 1 -->
+<div class="pt-4">
+<div class="flex justify-between items-baseline px-4 pb-2">
+<h3 class="text-[#111418] dark:text-white text-xl font-bold leading-tight">Tháng 2, 2024</h3>
+<span class="text-sm text-[#637588] dark:text-[#9dabb9]">Tết Giáp Thìn</span>
+</div>
+<div class="grid grid-cols-3 gap-0.5 px-0.5">
+<!-- Item 1 -->
+<div class="relative aspect-square group cursor-pointer overflow-hidden bg-gray-200 dark:bg-gray-800">
+<img alt="Family gathering during Tet holiday with red decorations" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Family gathering during Tet holiday with red decorations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOwmjpcKc5eNtqyyic37xaIR_rhk7y81FREnS9fPyVELWsmRPFSUdh4I2GnN0AudlUA-AKvzpMLv2D719Sq2lxOhn9_OTbIBZoNcv1syZsS2bbe7Fx0IBNBA2CkNsGUGP4IHYXL9Pd5mJC4AXCqvypmYOJNauWSD0ePp_Ccz2-OcXXB_sWB0iD6PfWF3QS5A3_4W4mNzm6JtpMy0qcwlQN_BA0YDqkfGd38jQ2JXEx6Um6dV0V9-XtB3v4vXK_dygON4xEztIbYZE"/>
+</div>
+<!-- Item 2 -->
+<div class="relative aspect-square group cursor-pointer overflow-hidden bg-gray-200 dark:bg-gray-800">
+<img alt="Happy family portrait outdoors" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Happy family portrait outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGGH6o4uW48ZVLPrBIS6cJ2lnMOA49qWolAPL3_UkOaNxwUrh83mfayNzP7sRM48gMHVZ6sg1Ryhn_LbmE-nEMjbB7F5NC1aZexOIsQrNY-ux1sWgHG3zyuPlcy7YiqN53u4ozw3_lM0t6Hjoyxyx7HzLrR3ikgSNbVvN_-tTSsx-qt1oxTxoHu4_2D_VAbVGAhLCd7Xxc6K_iFBmM0Cz4o-dGV-VTsHQQTKST4HcEyVSRbthKBYcy6_aA3KNSMUSMSSW0DezZIh4"/>
+</div>
+<!-- Item 3: Video -->
+<div class="relative aspect-square group cursor-pointer overflow-hidden bg-gray-200 dark:bg-gray-800">
+<img alt="Children playing with fireworks" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 opacity-90" data-alt="Children playing with fireworks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKxCy86RbHUcp8bGIgBEzkVCkRNXz0CiROrjopOHYNxRy5f4fA54wzw8CusXSVtBOAd6UcpiKSPXubAPIwB7z22oDF-Rb7VpZUSkB7PoF1LQu27ZILclQKO0OORXuk_fk07J0yWCZTNbZvFWDqBwrOQr7stuYqnRiJ5k-FoK6IDtFBNIcCelz1768EfdvN8rv5nbainJBkyoe4dtyExAc1FPZhRUSw_iGiiPunbTnXG8X-ZDAZKFw-MbjoQr2iUU7433M6oMjZL0E"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-black/30 backdrop-blur-sm rounded-full p-2">
+<span class="material-symbols-outlined text-white">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-1 right-1 text-[10px] font-bold text-white bg-black/60 px-1.5 py-0.5 rounded">0:45</div>
+</div>
+<!-- Item 4 -->
+<div class="relative aspect-square group cursor-pointer overflow-hidden bg-gray-200 dark:bg-gray-800">
+<img alt="Traditional Vietnamese food banquet" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Traditional Vietnamese food banquet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM-P7kGBQp1PPwhP0AvOGEmS6OST_lMErANzt13vYC9uX9P8CPW_WN-Oaqb1KWYwFuz1AGR69KtpkPP_C-A1uLE0TW8kdF-uXjdYzi35V_nJed__abHPjc4JgBOavfJM9_g3TT4nZlShsKXEWV9b0Iu7pGw2_MacqIgzL4zQJnzOeHUSsrftLYGwh7V1mTEM8OpuDIR1p4ErN1HxoJRXQ00LieA4YPrfyXg4A7H7rsyxLS5GJhiDAwW26nFrek4idY3rjOX8i_Syg"/>
+</div>
+<!-- Item 5 -->
+<div class="relative aspect-square group cursor-pointer overflow-hidden bg-gray-200 dark:bg-gray-800">
+<img alt="Grandparents smiling at camera" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Grandparents smiling at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiC4onozGgEG7sGWOkqXdgJh4p8XLvs_aLgypABO4LkUfGKTPzO8_G_ha6e7KLW8yopvMpnE06lYgxhJBoE7-ErHB-WCHWRKMwQ28E7HLE-MT6ISbs97Bir3Cs9kseEYtWRhQvgv-MmTbtUeMDShn3Wri6FQXF17GgQoXjWpa0K9xEQkjMaHPd6rvm_WWb_ayZkha2wdN42x492voZh5xT-cP-7FIs_PBYrO7IE8AqLXSExDTuLkTTdXORPSeavdaQlt5O_6HcTX8"/>
+</div>
+<!-- Item 6 -->
+<div class="relative aspect-square group cursor-pointer overflow-hidden bg-gray-200 dark:bg-gray-800">
+<img alt="Family group photo in living room" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Family group photo in living room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNgjgVsuWpwsdDVGga5WDIN1WoWtvTVXt6LBDoAcwpvnPOj-Gy6VOtLQCiZqEXH3jKblnHYmCKjlocuwLsqOL3983lTo-kHgSfPn-s-_14QExWLYyby9p_bLggMGX333YT8XghocPfZBud_v9jqN6AMPvwTxrjw6GK9pMMLDdcFEXgrYXTCXWpt2_tmfboXrm60B9BTPXtlsmltb-spwB_mBAHl9HRB6eoXb9TrraNkiEaBRpxJjxDn8eXgH31kxSsqSEuPYzCwsk"/>
+</div>
+</div>
+</div>
+<!-- Timeline Section 2 -->
+<div class="pt-6">
+<h3 class="text-[#111418] dark:text-white text-xl font-bold leading-tight px-4 pb-2">Tháng 12, 2023</h3>
+<div class="grid grid-cols-3 gap-0.5 px-0.5">
+<!-- Large Item span 2x2 -->
+<div class="col-span-2 row-span-2 relative aspect-square group cursor-pointer overflow-hidden bg-gray-200 dark:bg-gray-800">
+<img alt="Christmas tree with gifts and family" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Christmas tree with gifts and family" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD20ux9Sk9LyLLVG7VFeJ52VY8r9AWIy8saEB9DfrAmyiDiHVDgCpT3WkK5wVYBHX2YiD_hbAFEYhfKSSiRwP8ZEbMCCMYBaPcKNAcNjxb2j3Ko-Y7JxX4Sm7pTovfsLdAaEd1izMKS_bEkh5oSJ3976PUI54yhEwzKyNTPEx0y8j_rwhCBP6qVagBCnTBueFLDZ3cMNzouvAFMMQwOiIM_lA_Gi5LDhVd4ZVkLhbTx-6ezRqfUQhrBQKJgThTVXATXvmMYaJ92I74"/>
+<div class="absolute top-2 right-2">
+<span class="material-symbols-outlined text-white drop-shadow-md">favorite</span>
+</div>
+</div>
+<!-- Item Side 1 -->
+<div class="relative aspect-square group cursor-pointer overflow-hidden bg-gray-200 dark:bg-gray-800">
+<img alt="Decorating the house for holidays" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Decorating the house for holidays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDOCYtS0Ofig14A9Wvr4T733n8fGNjcZMj0wd0zh8jJjpLBtpeZ16oKQU_ZFmo2GKr-2U-vnNEhOScYePrek4Qv5wwI9HmR0dzHDrzBZ0_3EyOku3qHUXw77x6p58fqNEHcBinBnY5P9bnFkdQXd6cBQ35OwPo81a-2VieH-ovDnabpRk9Ol9Ooc9H7mEvLwTcXQI9-Wnomxk9puJhqycIOKyWCetsv86gS7DCqTKSY40FavLb3Konj55YfYeGkY_aVl02e5EDC2k"/>
+</div>
+<!-- Item Side 2 -->
+<div class="relative aspect-square group cursor-pointer overflow-hidden bg-gray-200 dark:bg-gray-800">
+<img alt="Family dinner table setting" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Family dinner table setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtLAGC7WLqju1xR5uXlDSuxY5CW0mw7jrZaSbVbWuXDsiCTSzeJKK7Of9N1C7WI9z3db6EWwKLzRVlKZ1-lBVmYplSEaLP9U9AOqJgH4aIn2X1Q5wjf_Tl5JBa6NA2tBuCxN8USjW7NqvWtTAFZm_Fl3k5HEaLiQpGYQeuTEmybxWizqQxRr16S8vNQ5T1D9ugwhKg_wnG6rlPZkDQkzqYnDA5wsNCPT1LyTrj8pF6LWptf02MfMbllYaSg0FDDVDR04NZ7H30EmI"/>
+</div>
+<!-- Item Side 3 -->
+<div class="relative aspect-square group cursor-pointer overflow-hidden bg-gray-200 dark:bg-gray-800">
+<img alt="Baby's first christmas" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Baby's first christmas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7mpPP3PRDb1zuVYst45ohhU_o0K2Yvrt0zfzBQycIL75CCguj5raw0UY4ra_gVdx7qI5Ny_-68q-9v4eatUMbzP5WqQsB-LPotCMMIz1pBotYomXiJo1IpmQMVtSsAXsKwzV-VcxWuUuGEJP8TH6KIWFBIWJpyXs444dY69z2wKMvYI_zBOZyv2hoNg82AJrqtK5v3nYedJgT7BPPondmojQnitfmywcN9tgAeN9iYdanbDN5_djjnKNTMBRRHJhEl1x2Rsj73ck"/>
+</div>
+<!-- Item Side 4 -->
+<div class="relative aspect-square group cursor-pointer overflow-hidden bg-gray-200 dark:bg-gray-800">
+<img alt="New year party celebration" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="New year party celebration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs2x1zx7scg3rAihYahbjxbXr8OuFougPYo66zdoQVaBngGHRdK3O8DGMOf-VKVjq2I4jYtsfV2GPVt3xl9LWHmpAppDVDAg1mcMcTgY0LFHq5P7UlsVytooLRdkyNtpEajrLeV-ElISNLC6aT8Lw68e7zlnNgdqIaDbgEqJLRv16aaWiTyzLG12VbfBZoHThH9kQkOyc1BfwUKeW5-4PyqMGQN-PpFia5kd-gr6JG9KV566YaWutkM-6B4fAdv8Kw_a9Hc11pvdk"/>
+</div>
+</div>
+</div>
+<!-- Timeline Section 3 -->
+<div class="pt-6">
+<h3 class="text-[#111418] dark:text-white text-xl font-bold leading-tight px-4 pb-2">Tháng 11, 2023</h3>
+<div class="grid grid-cols-4 gap-0.5 px-0.5">
+<div class="relative aspect-square bg-gray-200 dark:bg-gray-800 overflow-hidden"><img class="w-full h-full object-cover" data-alt="Family picnic in the park" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGGdzUGmfAd0f5zbOCklgzBewQysbL5WrYhF4jR84ckpiU2sX14R4cIu3zFzKuAcDF01p8Dd5k_QZw5PVAjnHqcp_cXbSPuQaNjt-iGaWzhcIJzl-7UbMqNTNza-4qNGAOkV2U0nkkCIbPldR6vEoJqmeaHvwXNidYdKz-7v25TdT7atsCd2HGCw9Tepk4pEt1Fh9Gz091Rkoy0HZkUILNTZhgFkfbFfK0SuIWVANKxCirAQ2d_lD7Bc11sFj8P7-9jaMIHDAiJcQ"/></div>
+<div class="relative aspect-square bg-gray-200 dark:bg-gray-800 overflow-hidden"><img class="w-full h-full object-cover" data-alt="Family cooking together" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5SInljvoIXi_CPvKNT_mxhWZ2l16qh34A2a51yQeyPedWqHa_9gvybiAjVImFShZVD72t1wYCqHDn7BLMcMCWcDcHdEs2nQ1nkJptmb8yvt29de06CGgbDjwZKda1R_TJRVrma16M0jDcDyMW9Xj08kAJ-Ye7l5vRoAoiQCLROFWC9fpXIHwbSGd84TD4eDA-b34EiB_230pv5oBBb0QkihSMNAyv68YdxxAx2-QPqykv4v8po0xRDcKv7L2tFajo4tQMD4B13R4"/></div>
+<div class="relative aspect-square bg-gray-200 dark:bg-gray-800 overflow-hidden"><img class="w-full h-full object-cover" data-alt="Autumn landscape travel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlsyV1se9XyKFrFHtrhPAKIrsfTOfLXn4mlwO45wFuOEPd9nIK1HhnxFy7NsyCn8248eKxNr3PRbUQ7OTDCDoGnX66RJ_mIL4DvujG0IH99nF7qP4-edOxEpdxZpGM1B56M6Jn1CiZiKKtTgRLzS2jb5Y9iq_SlhYh3xEYOxPxEE8uT3dV6YgGttG9H95ejacW3Nrs30lic3YMmykZZW6TGBtc7IU1zOplYqGbnHBtoAXElc5omMgj6Zyf_bafrgL24eeyYpKMuI0"/></div>
+<div class="relative aspect-square bg-gray-200 dark:bg-gray-800 overflow-hidden"><img class="w-full h-full object-cover" data-alt="Birthday cake celebration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGtlpvQu013QneoUy01KyTF-Wcj3udrnABj6skbukUzDfhyG8GkD8qB1MIJ-HjNG4CWdQRpprIBykoueo4GR3HZ41OwRfRZWdyC2qSlCBu0bnjcMxuPRjKUVvkFb8YR4XKmwtmPugREPnVN18ey8x9OQW5opqZFXCxkP6BhdJ7qFpzmTpH9AhdOxYKWMs34ZRVmIYgaNBVZfqzmQJPRtHSvB-RRMDjIMmk8CvRHGlvYbEdrbiYyUGjn53_pEsnB7Sq15fmOcLcI5k"/></div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button -->
+<div class="absolute bottom-20 right-4 z-30">
+<button class="flex items-center justify-center size-14 rounded-full bg-primary text-white shadow-lg shadow-blue-500/40 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="flex-none bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800 pb-safe">
+<div class="flex justify-around items-center h-[60px] px-2">
+<!-- Nav Item: Active -->
+<button class="flex flex-col items-center justify-center w-full h-full gap-1">
+<span class="material-symbols-outlined text-primary text-[26px] fill-1">photo_library</span>
+<span class="text-[10px] font-medium text-primary">Thư viện</span>
+</button>
+<!-- Nav Item: Inactive -->
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 group">
+<span class="material-symbols-outlined text-[#637588] dark:text-[#9dabb9] text-[26px] group-hover:text-primary transition-colors">account_tree</span>
+<span class="text-[10px] font-medium text-[#637588] dark:text-[#9dabb9] group-hover:text-primary transition-colors">Gia phả</span>
+</button>
+<!-- Nav Item: Inactive -->
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 group">
+<span class="material-symbols-outlined text-[#637588] dark:text-[#9dabb9] text-[26px] group-hover:text-primary transition-colors">notifications</span>
+<span class="text-[10px] font-medium text-[#637588] dark:text-[#9dabb9] group-hover:text-primary transition-colors">Thông báo</span>
+</button>
+<!-- Nav Item: Inactive -->
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 group">
+<span class="material-symbols-outlined text-[#637588] dark:text-[#9dabb9] text-[26px] group-hover:text-primary transition-colors">person</span>
+<span class="text-[10px] font-medium text-[#637588] dark:text-[#9dabb9] group-hover:text-primary transition-colors">Cá nhân</span>
+</button>
+</div>
+<!-- Safe area spacing for iOS home indicator -->
+<div class="h-4 w-full"></div>
+</div>
+</body></html>
+
+<!-- Trang chủ/Bảng tin gia đình -->
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Newsfeed</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1c2630",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-[88px]">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-20 backdrop-blur-md bg-opacity-90 dark:bg-opacity-90">
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight flex-1">Gia Đình Tôi</h2>
+<div class="flex gap-3 items-center justify-end">
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-surface-light dark:bg-surface-dark text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-sm">
+<span class="material-symbols-outlined" style="font-size: 24px;">add_a_photo</span>
+</button>
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-transparent text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors relative">
+<span class="material-symbols-outlined" style="font-size: 28px;">notifications</span>
+<span class="absolute top-2 right-2 h-2.5 w-2.5 rounded-full bg-red-500 border-2 border-background-light dark:border-background-dark"></span>
+</button>
+</div>
+</div>
+<!-- Greeting Headline -->
+<div class="px-4 pb-2 pt-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Thứ Hai, 15 tháng 4</p>
+<h2 class="text-slate-900 dark:text-white tracking-tight text-[28px] font-bold leading-tight pt-1">Chào con, Minh! 👋</h2>
+</div>
+<!-- Events Section -->
+<div>
+<div class="flex items-center justify-between px-4 pt-6 pb-3">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Sự kiện sắp tới</h3>
+<a class="text-primary text-sm font-semibold" href="#">Xem tất cả</a>
+</div>
+<!-- Horizontal Scroll Container -->
+<div class="flex overflow-x-auto no-scrollbar pb-2 px-4 gap-3 snap-x snap-mandatory">
+<!-- Event Card 1 -->
+<div class="snap-start flex-none w-[280px] bg-surface-light dark:bg-surface-dark rounded-xl p-3 shadow-sm border border-slate-200 dark:border-slate-800 flex flex-col gap-3">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden">
+<div class="w-full h-full bg-center bg-cover transition-transform hover:scale-105 duration-500" data-alt="Happy elderly woman celebrating birthday with cake and candles" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVQotVa37F8CcTG5jPjIL3uiQezD423Tj0xrmUie7i4euRl6ukorYx4AvgBS5zN-zxwumP_IuvMnwO2hPht8kUfKurYqEcXFZf59IruFlaSvLO9JWvCD9M-4pK_LhuD9lX2nRi9d7Iv45fZLTOLtQgs7KUBxuWSXhL8l2sJOdQ3WMGXJ02PdP6HwwNdQ2KGGkGbayyWz1N2KEI_ccpJmQJNdOyGRIHutWAqy2VueDMVNQkJIsjW4-gF-juAE4-OLgjnicD8DtKHnE");'>
+</div>
+<div class="absolute top-2 left-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded">2 ngày nữa</div>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-snug">Sinh nhật Bà Nội</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">calendar_month</span> 17 tháng 4
+                        </p>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="snap-start flex-none w-[280px] bg-surface-light dark:bg-surface-dark rounded-xl p-3 shadow-sm border border-slate-200 dark:border-slate-800 flex flex-col gap-3">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden">
+<div class="w-full h-full bg-center bg-cover transition-transform hover:scale-105 duration-500" data-alt="Large family gathering having dinner together at a long table" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfesT1-p2DJMroQbi6mSmUMRq-aSiOiCb-fUtyDJX7bIZfEz9lqJKncBPqWLIotRTKk0LwiBQXas0OqLQPeKp6D_aBan-ybreDFmF4zQqQHb0SKcjQ6jGxVYZ0fXCL1JgsCXORMhDMJePhgYiyt5lrlFVE6pHjlhrJ1BtrE2dVEILmC0z_PgTJqQoXRwTKx1n59kzvlgqjCbcHWnmgVeCyIRN1g48M7Qe27hwXy4bqI4J-d0N2xTJTqukQ4E9S7gcDCcKqVWI7Wlk");'>
+</div>
+<div class="absolute top-2 left-2 bg-slate-900/60 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded">Chủ Nhật tới</div>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-snug">Họp họ hàng tháng</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">location_on</span> Nhà thờ tổ
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Memories / On This Day -->
+<div class="mt-2">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight px-4 pb-3 pt-4">Kỷ niệm hôm nay</h3>
+<div class="px-4">
+<div class="relative w-full h-64 rounded-2xl overflow-hidden shadow-md group cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Vintage wedding photo of a couple in traditional Vietnamese ao dai" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCI-FLyoHJ0dN38_3iVvuhv2l2uVGC-0x-q3-Dw_oxnHUPFhYOgpNBQBimfrvPXMLTYoAZg3tdwM8XuQnB_EZFYMiX7aOA39k6NRZR0qUMkDeBIouofkV1rp1l-DZqmbAOfN8sZ7zN4djFVeg8ZFGpOq_FZ-Ty-diIETHSodHA-McnUZdEjCuIYHWVE9MJzCT7Kn-qYi4nJUqH0WPAavv4thtCIVWBaEHvu6LK628tTlTdBIumqOWleiwL_L6T8jOfRdi_GyGyFOH0");'>
+</div>
+<div class="absolute top-3 right-3 z-20 bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">history</span> 5 năm trước
+                    </div>
+<div class="absolute bottom-0 left-0 w-full p-4 z-20">
+<p class="text-white text-lg font-bold">Kỷ niệm ngày cưới Bố Mẹ</p>
+<p class="text-white/80 text-sm">15 Tháng 4, 2019 • 12 ảnh</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Feed -->
+<div class="mt-2">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight px-4 pb-3 pt-6">Bảng tin gia đình</h3>
+<div class="px-4 flex flex-col gap-4">
+<!-- Feed Card: Photo Upload -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 mb-3">
+<div class="h-10 w-10 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Portrait of Aunt Lan smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCXyoGbTATNh1n8BhKlyfvuTrKXpRjv_VAKNirEYiwPbRzD7b1uBOrP9o_9KjHae8s_fC6U8JS6u55V8hCWaZvUkptYdGxq9qmwDCQWEn7cEnWzwRzj9tT1z0BK9KgFjKQY6xthuVIR67OrxpmP_7ijkFdhu8CzuF1buUUIo4sag46mtBoSLZTJBeZ2CszUg9dywt8HNWux_dybEuxHqH1vH7VsrGNNzq_qT1brBcrXx0RYbmTVu3-N3aYqPk_sc5U6iiibTPGMd0s");'></div>
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Cô Lan</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">đã thêm một album mới • 2 giờ trước</p>
+</div>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-slate-800 dark:text-slate-200 text-sm mb-3">Hình ảnh đợt về quê ăn Tết vừa rồi nè cả nhà ơi. Vui quá chừng! ❤️🌸</p>
+<div class="grid grid-cols-2 gap-2 mb-3 rounded-lg overflow-hidden">
+<div class="aspect-square bg-cover bg-center" data-alt="Peach blossom branch in a vase for Tet holiday" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfb5-fs33qp1tD8gHHmMJcUJ0CfQ4V16BmlSD13qNF3eUSTf0I2P48n2tyAP0INBBsYThIDGbKGqSuhkxvOQ_niOt0Oa-zCQKtQI5_oCAO6_17a_LZxCKPACCG9uHXli9g8IAwWLOTegacDCyYB13-nk3NYecyZ7c1CBpqoysvXDY65BnCYdrfxFXqoI7zyFN77zuMRTWknWbEe6-ySqzR-mbUxhIy86gWORHGKyF_rUj31U7AEsLQGXTsdDJ0LYEMeQQ_Ab6rTzY");'></div>
+<div class="aspect-square bg-cover bg-center" data-alt="Family members making Chung cake together" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgoV4RL49KZT0dCQqjWSdyNZk9GutIa_SWzNIvFBHWfTroADAS31F_-ebjCqFnVUXgRw4Z0Q-0aiWveD6LxNSu0bMizCxfoBXb5z9C2qfowkhGNUSI0oNJZD8KU1l73CActrpQuAIL7yVN1C7gwOtYbs5hCMn14bLqPzXEUGzFirFsZD9_guQnJpuJ2F2IVB9R5wvXbXBIylov_bX-S-hBWZvokanIqZtDho8EvcsVAVapCOFqKr_Ho4IlwI83-PSD9cacQfu5Hl0");'></div>
+</div>
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-3">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+<span class="text-xs font-medium">12</span>
+</button>
+<button class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">chat_bubble</span>
+<span class="text-xs font-medium">4</span>
+</button>
+</div>
+<button class="text-slate-500 dark:text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined text-xl">share</span>
+</button>
+</div>
+</div>
+<!-- Feed Card: Family Tree Update -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex items-start gap-3">
+<div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined">account_tree</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Cập nhật gia phả</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Chú Tuấn đã thêm thành viên mới</p>
+</div>
+<span class="text-xs text-slate-500 dark:text-slate-400">5 giờ trước</span>
+</div>
+<div class="mt-3 flex items-center gap-3 p-2 bg-background-light dark:bg-background-dark rounded-lg border border-slate-200 dark:border-slate-700">
+<div class="h-12 w-12 rounded-full bg-slate-300 bg-cover bg-center" data-alt="Portrait of a newborn baby" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAq_4nBFCM2dm0JaBOLdi5_v0aRMRbiTY_CkDnmyIcbm8j4sQIorHSzK-huCsIW32jeLLm-xG9Rlzkf9QGAU-1lqTskf21HuAv5SlYqsfkfa4ca1sKFSsw0IJfCBFQl4upZXQplFYLOSFY5zv1INA720RDG8ix4-cmn6qYqVDfuW2yNKEC1LCVYgS3XI0_wKC09WqmxWOZ32GFzjvnrZk1seoJQVwNpr9R_W2JDfiDPEan1Gp9aoqAHmyjL_IH8Fha2hPR30t7ZwCs");'></div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Bé Gạo (Nguyễn Văn An)</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Con của Chú Tuấn &amp; Cô Hoa</p>
+</div>
+</div>
+<button class="mt-3 w-full py-2 bg-primary/10 hover:bg-primary/20 text-primary text-sm font-semibold rounded-lg transition-colors">
+                                Xem cây gia phả
+                            </button>
+</div>
+</div>
+</div>
+<!-- Feed Card: Status -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 mb-2">
+<div class="h-10 w-10 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Portrait of a middle aged man with glasses" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCDnfDtSqDFn8Yx27YandHpXDFjOz4p6I9lNwwPUT_p8Jejh8T6nAQbmgtoCV7C8F50kFnWYiQpfXP16l62cGtJgUqgCWVmgrMAv9LCAyE0qRW28fcMkFGrNPNCetlHRHQK695IIGTDfGMBXDHVJwihgt5wcBbupCemp0B-DFpr7DgK87fWTavAO1tkCmfkTaGQ7lFVgyryqWW_gdQ0alVr00H051Y034tFwdbuEqUz2yrk4udPiylmyq-kXD2gcMVeohfYVhqtnEU");'></div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Bác Cả</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">đăng 1 ngày trước</p>
+</div>
+</div>
+<p class="text-slate-800 dark:text-slate-200 text-sm leading-relaxed">
+                        Cuối tuần sau cả nhà nhớ sắp xếp về quê làm lễ mừng thọ cho Bà nhé. Bác đã đặt cỗ xong xuôi rồi, chỉ chờ các cháu về đông đủ thôi. 🎂
+                    </p>
+<div class="flex items-center gap-2 mt-3 pt-3 border-t border-slate-100 dark:border-slate-700">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="User avatar" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" data-alt="Tiny avatar of a woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0oqZqhBLclve8UtuoaVxMRFRqi6oGoLs_CuyfvKYplNSbInnF_YRm2FfjI7a9DSEG9-gY2UgvdbGbNrKM7MpZYWhsRn6eVddlPy1rS5BJC2iFCYjWdJoELFek6rNpg3RZTEpUpLyY1lBtdTm2u3REgIuDVolsvIPkiwjWG-j5xfhQ4wd4AGHcB2I1RpIyTmr9fi467yoQA_qr2FOY7cIttiz7QdwDK_-atClGhLLbS_fWe3sODExbRBDBi9lcHe7-dDVyvslePPE"/>
+<img alt="User avatar" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" data-alt="Tiny avatar of a man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDov9udUXuydLjZigTh34cLHJYE3k9gkurT242haymSOYXYPw70Erjt_MhmyobKvdztuUIruuhDfyiuy_xf3AMjQLTURKU5ILCSS4GwZLB5tDxcgJtpp787ug9jaYg1AaYA-SJ76vHFuWm2BB29s76iwrfxJIbEM1C97axk-LWnewBCkdVZxK7EKGs1gbrQ3KlQirBWsttlzr99okNa7IDWK1nLu1aRADkdBx2_cu2UEaBi-aMOeurHSQuHYLAjYLfIgtMhEaajrZU"/>
+<img alt="User avatar" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" data-alt="Tiny avatar of a woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2xmVwEyc3TnQaQbmn-skeEiGz8phyDEb3r53Br_nGUiNGnVAH0uh3WXeZX58sSb6kbXX1v1afbMo0GLt9Is1LbT8XfsXXNvTPb8H5txowTkL1qVov7icZybQRRYT6yGaEsmIrnDH69UwXrVgdf-DRwD4-fk304JrY5ION_ekRjK5R1NBXK3ONtEpEhnDRwJ80O2L-LNseqMarXpgMzHUJcicR2Jfb5haE35uV0hdgc-yGfZQQ4Cj9pQL1Bg64P6HtMtQiC8tHqzM"/>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 ml-1">8 người đã thích</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Spacer for bottom nav -->
+<div class="h-6"></div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 w-full bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 pb-safe pt-2 z-50">
+<div class="grid grid-cols-4 h-16">
+<button class="flex flex-col items-center justify-center gap-1 text-primary">
+<span class="material-symbols-outlined filled">home</span>
+<span class="text-[10px] font-medium">Trang chủ</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="text-[10px] font-medium">Gia phả</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined">photo_library</span>
+<span class="text-[10px] font-medium">Thư viện</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Cá nhân</span>
+</button>
+</div>
+<!-- iPhone Home Indicator Spacer -->
+<div class="h-5 w-full bg-surface-light dark:bg-surface-dark"></div>
+</div>
+</div>
+<script>
+        // Simple script to toggle like button style for interactivity demo
+        const likeButtons = document.querySelectorAll('button:has(span.material-symbols-outlined:contains("favorite"))');
+        // This is pseudo-code logic since no JS allowed, just demonstrating thought.
+    </script>
+</body></html>
