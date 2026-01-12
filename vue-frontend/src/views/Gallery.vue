@@ -23,6 +23,7 @@
               class="flex w-full min-w-0 flex-1 resize-none overflow-hidden bg-transparent text-[#111418] dark:text-white focus:outline-0 placeholder:text-[#9dabb9] text-sm font-normal leading-normal border-none" 
               placeholder="Tìm kiếm khoảnh khắc, người thân..." 
               v-model="searchQuery"
+              @input="handleSearch"
             />
             <div class="text-[#9dabb9] flex items-center justify-center pr-3 pl-2 cursor-pointer hover:text-primary transition-colors">
               <span class="material-symbols-outlined text-[20px]">tune</span>
@@ -76,7 +77,7 @@
     <div class="flex-1 overflow-y-auto no-scrollbar pb-24 relative bg-background-light dark:bg-background-dark">
       <!-- Timeline Sections -->
       <div 
-        v-for="(section, index) in timelineSections" 
+        v-for="(section, index) in filteredSections" 
         :key="index"
         class="pt-4 lg:pt-6"
         :class="{ 'pt-6 lg:pt-8': index > 0 }"
@@ -132,6 +133,17 @@
       </button>
     </div>
 
+    <!-- Media Viewer Modal -->
+    <MediaViewer 
+      v-model="showMediaViewer"
+      :media="selectedMedia"
+      :has-previous="currentMediaIndex > 0"
+      :has-next="currentMediaIndex < allMedia.length - 1"
+      @previous="previousMedia"
+      @next="nextMedia"
+      v-if="selectedMedia"
+    />
+
     <!-- Bottom Navigation Bar -->
     <BottomNav />
   </div>
@@ -141,6 +153,7 @@
 import { ref, computed } from 'vue'
 import { useGalleryStore } from '@/stores/useGalleryStore'
 import BottomNav from '@/components/BottomNav.vue'
+import MediaViewer from '@/components/MediaViewer.vue'
 
 const galleryStore = useGalleryStore()
 
@@ -153,8 +166,8 @@ const filters = [
   { value: 'favorite', label: 'Yêu thích' }
 ]
 
-const timelineSections = computed(() => {
-  const sections = [
+const filteredSections = computed(() => {
+  let sections = [
     {
       month: 'Tháng 2, 2024',
       event: 'Tết Giáp Thìn',
@@ -181,12 +194,63 @@ const timelineSections = computed(() => {
     }
   ]
   
+  // Filter by search query
+  if (searchQuery.value.trim()) {
+    sections = sections.map(section => ({
+      ...section,
+      items: section.items.filter(item => 
+        item.alt?.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+        section.month.toLowerCase().includes(searchQuery.value.toLowerCase())
+      )
+    })).filter(section => section.items.length > 0)
+  }
+  
+  // Filter by type
+  if (galleryStore.filter !== 'all') {
+    sections = sections.map(section => ({
+      ...section,
+      items: section.items.filter(item => {
+        if (galleryStore.filter === 'image') return item.type === 'image'
+        if (galleryStore.filter === 'video') return item.type === 'video'
+        if (galleryStore.filter === 'favorite') return item.favorite
+        return true
+      })
+    })).filter(section => section.items.length > 0)
+  }
+  
   return sections
 })
 
+const handleSearch = () => {
+  // Search is handled in computed property
+}
+
+const showMediaViewer = ref(false)
+const selectedMedia = ref(null)
+const currentMediaIndex = ref(0)
+const allMedia = computed(() => {
+  return filteredSections.value.flatMap(section => section.items)
+})
+
 const openMedia = (item) => {
-  // Handle media opening
-  console.log('Opening media:', item)
+  const index = allMedia.value.findIndex(m => m.id === item.id)
+  currentMediaIndex.value = index >= 0 ? index : 0
+  selectedMedia.value = item
+  showMediaViewer.value = true
+}
+
+const nextMedia = () => {
+  if (currentMediaIndex.value < allMedia.value.length - 1) {
+    currentMediaIndex.value++
+    selectedMedia.value = allMedia.value[currentMediaIndex.value]
+  }
+}
+
+const previousMedia = () => {
+  if (currentMediaIndex.value > 0) {
+    currentMediaIndex.value--
+    selectedMedia.value = allMedia.value[currentMediaIndex.value]
+  }
 }
 </script>
 

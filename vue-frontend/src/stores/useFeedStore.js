@@ -17,7 +17,8 @@ export const useFeedStore = defineStore('feed', () => {
       ],
       likes: 12,
       comments: 4,
-      timeAgo: '2 giờ trước'
+      timeAgo: '2 giờ trước',
+      isLiked: false
     },
     {
       id: 2,
