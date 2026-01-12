@@ -43,6 +43,15 @@
           <span class="text-xs font-medium text-gray-600 dark:text-gray-300">+{{ event.attendees.length - 3 }}</span>
         </div>
       </div>
+      <div v-else class="mt-4">
+        <button 
+          class="text-primary text-sm font-medium hover:underline flex items-center gap-1"
+          @click="handleRSVP"
+        >
+          <span class="material-symbols-outlined text-base">{{ event.isRSVP ? 'check_circle' : 'add_circle' }}</span>
+          {{ event.isRSVP ? 'Đã tham gia' : 'RSVP tham gia' }}
+        </button>
+      </div>
     </div>
     <div 
       v-if="event.image"
@@ -90,6 +99,12 @@ const getColor = (color) => {
     green: '#22c55e'
   }
   return colors[color] || '#137fec'
+}
+
+const emit = defineEmits(['rsvp'])
+
+const handleRSVP = () => {
+  emit('rsvp', props.event)
 }
 </script>
 
