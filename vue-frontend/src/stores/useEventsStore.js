@@ -12,7 +12,8 @@ export const useEventsStore = defineStore('events', () => {
       location: 'Nhà hàng Sen Tây Hồ, Hà Nội',
       color: 'red',
       image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBle5kWcKhWR_K-EKO9SoYValMzfJGK0321sLKWV3BuzYQsIINkUDL6qTwabgCQJvbxx9hC-A5MuXaFs1gme5TgiIa_6JuAh0UsJJzV-zmYIkfGwfhQvdEIvCUznbl2-LLmEk68vdtQlJke9yPx9hi9HD_uNTpBZvj6aj9LMnL9hdKvpHenbHcJZTe9yErSGU7vwA5hj9GKVVmxXUZLCuTJCuQwVdP6YRMaAdm69WUEbTNqjyQkNJk3-DlpgxM_H-k-26i6mxddC10',
-      attendees: []
+      attendees: [],
+      isRSVP: false
     },
     {
       id: 2,
