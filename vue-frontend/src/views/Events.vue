@@ -106,6 +106,7 @@
             v-for="event in todayEvents" 
             :key="event.id" 
             :event="event"
+            @rsvp="handleRSVP"
           />
         </div>
       </div>
@@ -118,6 +119,7 @@
             v-for="event in upcomingEvents" 
             :key="event.id" 
             :event="event"
+            @rsvp="handleRSVP"
           />
         </div>
       </div>
@@ -133,9 +135,18 @@
     </div>
 
     <!-- FAB: Add Event -->
-    <button class="fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-[0_8px_16px_rgba(19,127,236,0.3)] transition-transform hover:scale-105 active:scale-95 group">
+    <button 
+      class="fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-[0_8px_16px_rgba(19,127,236,0.3)] transition-transform hover:scale-105 active:scale-95 group"
+      @click="showEventForm = true"
+    >
       <span class="material-symbols-outlined text-[28px] transition-transform group-hover:rotate-90">add</span>
     </button>
+
+    <!-- Event Form Modal -->
+    <EventForm 
+      v-model="showEventForm"
+      @saved="handleEventSaved"
+    />
 
     <BottomNav />
   </div>
@@ -147,6 +158,37 @@ import { useAppStore } from '@/stores/useAppStore'
 import { useEventsStore } from '@/stores/useEventsStore'
 import BottomNav from '@/components/BottomNav.vue'
 import EventCard from '@/components/EventCard.vue'
+import EventForm from '@/components/EventForm.vue'
+
+const showEventForm = ref(false)
+
+const handleEventSaved = () => {
+  // Event saved, refresh if needed
+}
+
+const handleRSVP = (event) => {
+  const eventIndex = eventsStore.events.findIndex(e => e.id === event.id)
+  if (eventIndex !== -1) {
+    const currentEvent = eventsStore.events[eventIndex]
+    if (!currentEvent.isRSVP) {
+      // Add current user to attendees
+      if (!currentEvent.attendees) {
+        currentEvent.attendees = []
+      }
+      currentEvent.attendees.push({
+        name: 'Bạn',
+        avatar: appStore.currentUser.avatar
+      })
+      currentEvent.isRSVP = true
+    } else {
+      // Remove from attendees
+      if (currentEvent.attendees) {
+        currentEvent.attendees = currentEvent.attendees.filter(a => a.name !== 'Bạn')
+      }
+      currentEvent.isRSVP = false
+    }
+  }
+}
 
 const appStore = useAppStore()
 const eventsStore = useEventsStore()
