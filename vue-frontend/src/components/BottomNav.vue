@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto z-50 bg-background-dark/95 backdrop-blur-lg border-t border-gray-800 pb-safe">
+  <div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto z-50 bg-background-dark/95 backdrop-blur-lg border-t border-gray-800 pb-safe lg:hidden">
     <div class="flex items-center justify-around h-[60px] px-2">
       <button 
         class="flex flex-col items-center justify-center w-full h-full gap-1"
