@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-hidden relative h-screen w-full flex flex-col">
+  <div class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-hidden relative h-screen w-full flex flex-col max-w-full">
     <!-- Top App Bar (Fixed) -->
     <header class="z-50 absolute top-0 left-0 w-full bg-background-dark/80 backdrop-blur-md border-b border-white/5">
       <div class="flex items-center p-4 justify-between">

@@ -1,14 +1,14 @@
 <template>
-  <div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto border-x border-gray-800 shadow-2xl">
+  <div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md lg:max-w-none mx-auto lg:mx-0 border-x lg:border-x-0 border-gray-800 lg:border-0 shadow-2xl lg:shadow-none">
     <TopBar title="Hồ sơ thành viên" :show-back="false" :show-menu="true" />
     
     <!-- Scrollable Content -->
     <div class="flex-1 pb-24">
       <!-- Profile Header -->
-      <div class="flex flex-col items-center px-4 pt-4 pb-2">
-        <div class="relative mb-4">
+      <div class="flex flex-col lg:flex-row lg:items-start lg:gap-8 items-center px-4 lg:px-8 pt-4 lg:pt-8 pb-2">
+        <div class="relative mb-4 lg:mb-0">
           <div 
-            class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 border-4 border-surface-dark shadow-xl"
+            class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 lg:h-40 lg:w-40 border-4 border-surface-dark shadow-xl"
             :style="{ backgroundImage: `url('${member.avatar}')` }"
           ></div>
           <div class="absolute bottom-1 right-1 bg-primary text-white rounded-full p-1.5 border-4 border-background-dark flex items-center justify-center shadow-sm">
@@ -30,12 +30,12 @@
       </div>
 
       <!-- Action Buttons -->
-      <div class="px-4 py-4 w-full flex gap-3">
-        <button class="flex-1 h-10 bg-primary hover:bg-blue-600 text-white text-sm font-bold rounded-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-primary/20">
+      <div class="px-4 lg:px-8 py-4 w-full flex gap-3 lg:max-w-2xl">
+        <button class="flex-1 h-10 lg:h-12 bg-primary hover:bg-blue-600 text-white text-sm lg:text-base font-bold rounded-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-primary/20">
           <span class="material-symbols-outlined text-[18px]">edit_note</span>
           <span>Chỉnh sửa hồ sơ</span>
         </button>
-        <button class="size-10 bg-surface-dark hover:bg-slate-800 text-white rounded-lg flex items-center justify-center border border-gray-800 transition-colors">
+        <button class="size-10 lg:size-12 bg-surface-dark hover:bg-slate-800 text-white rounded-lg flex items-center justify-center border border-gray-800 transition-colors">
           <span class="material-symbols-outlined text-[20px]">qr_code_2</span>
         </button>
       </div>
@@ -101,7 +101,7 @@
       </div>
 
       <!-- Media Grid -->
-      <div class="grid grid-cols-3 gap-1 p-1">
+      <div class="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1 lg:gap-2 p-1 lg:p-4 lg:max-w-6xl lg:mx-auto">
         <div 
           v-for="i in 8" 
           :key="i"

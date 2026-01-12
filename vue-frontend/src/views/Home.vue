@@ -1,13 +1,13 @@
 <template>
-  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-[88px] max-w-md mx-auto border-x border-gray-800 shadow-2xl">
+  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-[88px] lg:pb-0 max-w-md lg:max-w-none mx-auto lg:mx-0 border-x lg:border-x-0 border-gray-800 lg:border-0 shadow-2xl lg:shadow-none">
     <!-- Top App Bar -->
-    <div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-20 backdrop-blur-md bg-opacity-90 dark:bg-opacity-90">
-      <h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight flex-1">Gia Đình Tôi</h2>
+    <div class="flex items-center bg-background-light dark:bg-background-dark p-4 lg:p-6 pb-2 justify-between sticky top-0 z-20 backdrop-blur-md bg-opacity-90 dark:bg-opacity-90 lg:bg-opacity-100">
+      <h2 class="text-slate-900 dark:text-white text-xl lg:text-2xl font-bold leading-tight tracking-tight flex-1">Gia Đình Tôi</h2>
       <div class="flex gap-3 items-center justify-end">
-        <button class="flex items-center justify-center rounded-full h-10 w-10 bg-surface-light dark:bg-surface-dark text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-sm">
+        <button class="flex items-center justify-center rounded-full h-10 w-10 lg:h-12 lg:w-12 bg-surface-light dark:bg-surface-dark text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-sm">
           <span class="material-symbols-outlined" style="font-size: 24px;">add_a_photo</span>
         </button>
-        <button class="flex items-center justify-center rounded-full h-10 w-10 bg-transparent text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors relative">
+        <button class="flex items-center justify-center rounded-full h-10 w-10 lg:h-12 lg:w-12 bg-transparent text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors relative">
           <span class="material-symbols-outlined" style="font-size: 28px;">notifications</span>
           <span class="absolute top-2 right-2 h-2.5 w-2.5 rounded-full bg-red-500 border-2 border-background-light dark:border-background-dark"></span>
         </button>
@@ -15,25 +15,25 @@
     </div>
 
     <!-- Greeting Headline -->
-    <div class="px-4 pb-2 pt-2">
-      <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">{{ currentDate }}</p>
-      <h2 class="text-slate-900 dark:text-white tracking-tight text-[28px] font-bold leading-tight pt-1">
+    <div class="px-4 lg:px-8 pb-2 pt-2 lg:pt-4">
+      <p class="text-slate-500 dark:text-slate-400 text-sm lg:text-base font-medium">{{ currentDate }}</p>
+      <h2 class="text-slate-900 dark:text-white tracking-tight text-[28px] lg:text-3xl font-bold leading-tight pt-1">
         Chào {{ appStore.currentUser.name }}! 👋
       </h2>
     </div>
 
     <!-- Events Section -->
     <div>
-      <div class="flex items-center justify-between px-4 pt-6 pb-3">
-        <h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Sự kiện sắp tới</h3>
-        <router-link to="/events" class="text-primary text-sm font-semibold">Xem tất cả</router-link>
+      <div class="flex items-center justify-between px-4 lg:px-8 pt-6 pb-3">
+        <h3 class="text-slate-900 dark:text-white text-lg lg:text-xl font-bold leading-tight tracking-tight">Sự kiện sắp tới</h3>
+        <router-link to="/events" class="text-primary text-sm lg:text-base font-semibold">Xem tất cả</router-link>
       </div>
       <!-- Horizontal Scroll Container -->
-      <div class="flex overflow-x-auto no-scrollbar pb-2 px-4 gap-3 snap-x snap-mandatory">
+      <div class="flex overflow-x-auto no-scrollbar pb-2 px-4 lg:px-8 gap-3 snap-x snap-mandatory lg:grid lg:grid-cols-2 xl:grid-cols-3 lg:gap-4 lg:snap-none">
         <div 
           v-for="event in upcomingEvents" 
           :key="event.id"
-          class="snap-start flex-none w-[280px] bg-surface-light dark:bg-surface-dark rounded-xl p-3 shadow-sm border border-slate-200 dark:border-slate-800 flex flex-col gap-3"
+          class="snap-start flex-none w-[280px] lg:w-auto bg-surface-light dark:bg-surface-dark rounded-xl p-3 lg:p-4 shadow-sm border border-slate-200 dark:border-slate-800 flex flex-col gap-3"
         >
           <div class="relative w-full aspect-video rounded-lg overflow-hidden">
             <div 
@@ -57,8 +57,8 @@
 
     <!-- Memories / On This Day -->
     <div class="mt-2">
-      <h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight px-4 pb-3 pt-4">Kỷ niệm hôm nay</h3>
-      <div class="px-4">
+      <h3 class="text-slate-900 dark:text-white text-lg lg:text-xl font-bold leading-tight tracking-tight px-4 lg:px-8 pb-3 pt-4">Kỷ niệm hôm nay</h3>
+      <div class="px-4 lg:px-8 lg:max-w-4xl">
         <div class="relative w-full h-64 rounded-2xl overflow-hidden shadow-md group cursor-pointer">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
           <div 
@@ -79,8 +79,8 @@
 
     <!-- Main Feed -->
     <div class="mt-2">
-      <h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight px-4 pb-3 pt-6">Bảng tin gia đình</h3>
-      <div class="px-4 flex flex-col gap-4">
+      <h3 class="text-slate-900 dark:text-white text-lg lg:text-xl font-bold leading-tight tracking-tight px-4 lg:px-8 pb-3 pt-6">Bảng tin gia đình</h3>
+      <div class="px-4 lg:px-8 flex flex-col gap-4 lg:max-w-4xl lg:mx-auto">
         <FeedCard 
           v-for="post in feedStore.posts" 
           :key="post.id" 

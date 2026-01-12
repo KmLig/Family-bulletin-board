@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex h-full w-full flex-col overflow-x-hidden pb-24 max-w-md mx-auto border-x border-gray-800 shadow-2xl">
+  <div class="relative flex h-full w-full flex-col overflow-x-hidden pb-24 lg:pb-0 max-w-md lg:max-w-none mx-auto lg:mx-0 border-x lg:border-x-0 border-gray-800 lg:border-0 shadow-2xl lg:shadow-none">
     <!-- Header -->
     <header class="sticky top-0 z-20 flex items-center justify-between bg-background-light/95 dark:bg-background-dark/95 px-4 py-3 backdrop-blur-md">
       <h2 class="text-[#111418] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Lịch Gia Đình</h2>
@@ -19,8 +19,8 @@
     </header>
 
     <!-- Calendar Widget -->
-    <section class="flex flex-col items-center justify-center px-4 py-2">
-      <div class="w-full max-w-md rounded-2xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm">
+    <section class="flex flex-col items-center justify-center px-4 lg:px-8 py-2 lg:py-4">
+      <div class="w-full max-w-md lg:max-w-2xl rounded-2xl bg-surface-light dark:bg-surface-dark p-4 lg:p-6 shadow-sm">
         <!-- Month Navigator -->
         <div class="flex items-center justify-between mb-4 px-2">
           <button 
@@ -78,8 +78,8 @@
       </div>
     </section>
 
-    <!-- Filter Chips -->
-    <section class="flex gap-3 px-4 py-3 overflow-x-auto scrollbar-hide">
+      <!-- Filter Chips -->
+    <section class="flex gap-3 px-4 lg:px-8 py-3 overflow-x-auto scrollbar-hide lg:justify-center">
       <button 
         v-for="filter in filters" 
         :key="filter.value"
@@ -94,14 +94,14 @@
     </section>
 
     <!-- Events List -->
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2 lg:max-w-4xl lg:mx-auto">
       <!-- Section: Today -->
       <div v-if="todayEvents.length > 0">
-        <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight px-5 py-3 flex items-center gap-2">
+        <h3 class="text-[#111418] dark:text-white text-lg lg:text-xl font-bold leading-tight px-5 lg:px-8 py-3 flex items-center gap-2">
           Hôm nay
           <span class="text-xs font-normal text-primary bg-primary/10 px-2 py-0.5 rounded-full">{{ todayDate }}</span>
         </h3>
-        <div class="px-4">
+        <div class="px-4 lg:px-8">
           <EventCard 
             v-for="event in todayEvents" 
             :key="event.id" 
@@ -112,8 +112,8 @@
 
       <!-- Section: Upcoming -->
       <div v-if="upcomingEvents.length > 0">
-        <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight px-5 py-3 mt-2">Sắp tới</h3>
-        <div class="px-4 flex flex-col gap-4">
+        <h3 class="text-[#111418] dark:text-white text-lg lg:text-xl font-bold leading-tight px-5 lg:px-8 py-3 mt-2">Sắp tới</h3>
+        <div class="px-4 lg:px-8 flex flex-col gap-4 lg:grid lg:grid-cols-2">
           <EventCard 
             v-for="event in upcomingEvents" 
             :key="event.id" 

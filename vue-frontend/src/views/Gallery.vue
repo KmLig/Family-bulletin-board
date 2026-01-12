@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-hidden h-screen flex flex-col max-w-md mx-auto border-x border-gray-800 shadow-2xl">
+  <div class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-hidden h-screen flex flex-col max-w-md lg:max-w-none mx-auto lg:mx-0 border-x lg:border-x-0 border-gray-800 lg:border-0 shadow-2xl lg:shadow-none">
     <!-- Top Navigation & Controls Container -->
     <div class="flex-none bg-background-light dark:bg-background-dark z-20 shadow-sm dark:shadow-none pb-2">
       <!-- Top App Bar -->
@@ -78,8 +78,8 @@
       <div 
         v-for="(section, index) in timelineSections" 
         :key="index"
-        class="pt-4"
-        :class="{ 'pt-6': index > 0 }"
+        class="pt-4 lg:pt-6"
+        :class="{ 'pt-6 lg:pt-8': index > 0 }"
       >
         <div class="flex justify-between items-baseline px-4 pb-2">
           <h3 class="text-[#111418] dark:text-white text-xl font-bold leading-tight">{{ section.month }}</h3>
