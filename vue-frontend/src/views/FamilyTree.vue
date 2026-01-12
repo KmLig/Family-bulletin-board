@@ -36,6 +36,7 @@
             class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-full text-white focus:outline-0 focus:ring-0 border-none bg-[#283039] placeholder:text-[#9dabb9] px-4 pl-2 text-base font-normal leading-normal" 
             placeholder="Tìm thành viên..." 
             v-model="searchQuery"
+            @input="handleSearch"
           />
         </div>
       </div>
@@ -207,6 +208,25 @@ const familyStore = useFamilyStore()
 
 const searchQuery = ref('')
 const selectedMember = ref(null)
+const allMembers = ref([
+  { id: 1, name: 'Nguyễn Thị Cúc', role: 'Bà Nội', generation: 1 },
+  { id: 2, name: 'Nguyễn Văn Ba', role: 'Bác Cả', generation: 2 },
+  { id: 3, name: 'Nguyễn Văn Bốn', role: 'Bố', generation: 2 },
+  { id: 4, name: 'Minh', role: 'Con', generation: 3 },
+  { id: 5, name: 'Lan', role: 'Con', generation: 3 },
+  { id: 6, name: 'Mai', role: 'Con', generation: 3 }
+])
+
+const handleSearch = () => {
+  if (searchQuery.value.trim()) {
+    const found = allMembers.value.find(m => 
+      m.name.toLowerCase().includes(searchQuery.value.toLowerCase())
+    )
+    if (found) {
+      selectMember(found.id)
+    }
+  }
+}
 
 const gen3Members = [
   { name: 'Minh', avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD00i2r3W0ku-eAUa7ywzyvMlzPydHihn7zUb564ClgRQr3U2RTMccYy3aKocCcJvfU2bnAdSjlX9ECpUwuqHCZQwqfZvfwT5bT40uAn7FmmimA2G6oVhfdlNjOTtSiqDvdmLy579jZd4vaUyhTp9QWPk-L_7LkR7-pZQDIVoPrNrxV3K61TefEPm74ZCO8Cp-c-VcaxLx-4jbtvJWpYuZkXSVXAOAW0wg8veRUseCEvQBhanf5_Nn0X2BiD2Xwl1h8-YhfuLTGiuA' },
