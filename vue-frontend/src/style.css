@@ -6,6 +6,13 @@
   body {
     min-height: max(884px, 100dvh);
   }
+  
+  /* Responsive container */
+  @media (min-width: 1024px) {
+    body {
+      min-height: 100vh;
+    }
+  }
 }
 
 @layer utilities {
