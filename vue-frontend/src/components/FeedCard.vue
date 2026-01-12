@@ -26,16 +26,29 @@
       </div>
       <div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-3">
         <div class="flex items-center gap-4">
-          <button class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">
-            <span class="material-symbols-outlined text-xl">favorite</span>
+          <button 
+            class="flex items-center gap-1.5 transition-colors"
+            :class="post.isLiked ? 'text-red-500' : 'text-slate-500 dark:text-slate-400 hover:text-red-500'"
+            @click="toggleLike(post)"
+          >
+            <span 
+              class="material-symbols-outlined text-xl"
+              :class="{ 'filled': post.isLiked }"
+            >favorite</span>
             <span class="text-xs font-medium">{{ post.likes }}</span>
           </button>
-          <button class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">
+          <button 
+            class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
+            @click="showComments(post)"
+          >
             <span class="material-symbols-outlined text-xl">chat_bubble</span>
             <span class="text-xs font-medium">{{ post.comments }}</span>
           </button>
         </div>
-        <button class="text-slate-500 dark:text-slate-400 hover:text-primary">
+        <button 
+          class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
+          @click="sharePost(post)"
+        >
           <span class="material-symbols-outlined text-xl">share</span>
         </button>
       </div>
@@ -102,11 +115,48 @@
 </template>
 
 <script setup>
-defineProps({
+import { useFeedStore } from '@/stores/useFeedStore'
+
+const props = defineProps({
   post: {
     type: Object,
     required: true
   }
 })
+
+const feedStore = useFeedStore()
+
+const toggleLike = (post) => {
+  const postIndex = feedStore.posts.findIndex(p => p.id === post.id)
+  if (postIndex !== -1) {
+    const currentPost = feedStore.posts[postIndex]
+    if (currentPost.isLiked) {
+      currentPost.isLiked = false
+      currentPost.likes = Math.max(0, currentPost.likes - 1)
+    } else {
+      currentPost.isLiked = true
+      currentPost.likes = (currentPost.likes || 0) + 1
+    }
+  }
+}
+
+const showComments = (post) => {
+  // TODO: Implement comments modal
+  console.log('Show comments for post:', post.id)
+}
+
+const sharePost = (post) => {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Family Bulletin Board',
+      text: post.content,
+      url: window.location.href
+    }).catch(err => console.log('Error sharing:', err))
+  } else {
+    // Fallback: Copy to clipboard
+    navigator.clipboard.writeText(window.location.href)
+    alert('Link đã được sao chép!')
+  }
+}
 </script>
 
